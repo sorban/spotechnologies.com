@@ -1,0 +1,121 @@
+info it worked if it ends with ok
+verbose cli [ 'node', '/usr/bin/npm', 'install', 'supervisor', '-g' ]
+info using npm@1.1.16
+info using node@v0.6.15
+verbose /usr/bin/node node symlink
+verbose config file /home/sorban/.npmrc
+verbose config file /usr/etc/npmrc
+verbose config file /usr/lib/node_modules/npm/npmrc
+verbose cache add [ 'supervisor', null ]
+silly cache add: name, spec, args [ undefined, 'supervisor', [ 'supervisor', null ] ]
+verbose parsed url { pathname: 'supervisor',
+verbose parsed url   path: 'supervisor',
+verbose parsed url   href: 'supervisor' }
+verbose addNamed [ 'supervisor', '' ]
+verbose addNamed [ null, '' ]
+silly name, range, hasData [ 'supervisor', '', false ]
+verbose raw, before any munging supervisor
+verbose url resolving [ 'https://registry.npmjs.org/', './supervisor' ]
+verbose url resolved https://registry.npmjs.org/supervisor
+http GET https://registry.npmjs.org/supervisor
+http 200 https://registry.npmjs.org/supervisor
+silly get cb [ 200,
+silly get cb   { vary: 'Accept',
+silly get cb     server: 'CouchDB/1.2.0 (Erlang OTP/R15B)',
+silly get cb     etag: '"BFZ7MAD8VJJGGPPJQ5UWJ6UF7"',
+silly get cb     date: 'Fri, 20 Apr 2012 00:57:47 GMT',
+silly get cb     'content-type': 'application/json',
+silly get cb     'content-length': '10647' } ]
+silly name, range, hasData 2 [ 'supervisor', '', true ]
+silly versions [ 'supervisor',
+silly versions   [ '0.0.4', '0.0.5', '0.0.6', '0.2.0', '0.3.0' ] ]
+verbose bin dist [ '0.6-ares1.7.5-DEV-evundefined-openssl1.0.0e-v83.6.6.24-linux-ia32-3.0.0-17-generic',
+verbose bin dist   { shasum: 'f522372289835c419e7210824357dd5aaad29638',
+verbose bin dist     tarball: 'http://registry.npmjs.org/supervisor/-/supervisor-0.3.0.tgz' } ]
+verbose addRemoteTarball [ 'https://registry.npmjs.org/supervisor/-/supervisor-0.3.0.tgz',
+verbose addRemoteTarball   'f522372289835c419e7210824357dd5aaad29638' ]
+verbose fetch to /tmp/npm-1334883460957/1334883460957-0.3362690578214824/tmp.tgz
+http GET https://registry.npmjs.org/supervisor/-/supervisor-0.3.0.tgz
+http 200 https://registry.npmjs.org/supervisor/-/supervisor-0.3.0.tgz
+silly updated sha bytes 3964
+info shasum f522372289835c419e7210824357dd5aaad29638
+info shasum /tmp/npm-1334883460957/1334883460957-0.3362690578214824/tmp.tgz
+verbose unpack /tmp/npm-1334883460957/1334883460957-0.3362690578214824/tmp.tgz
+silly gunzTarPerm modes [ '755', '644' ]
+silly extracting entry lib/
+silly extracting entry lib/cli-wrapper.js
+silly extracting entry lib/supervisor.js
+silly extracting entry package.json
+silly extracting entry README.md
+verbose caching /tmp/npm-1334883460957/1334883460957-0.3362690578214824/package/package.json
+verbose loadDefaults supervisor@0.3.0
+verbose from cache /tmp/npm-1334883460957/1334883460957-0.3362690578214824/package/package.json
+verbose tar.pack [ '/home/sorban/.npm/supervisor/0.3.0/package.tgz',
+verbose tar.pack   '/tmp/npm-1334883460957/1334883460957-0.3362690578214824/package' ]
+verbose tarball /home/sorban/.npm/supervisor/0.3.0/package.tgz
+verbose folder /tmp/npm-1334883460957/1334883460957-0.3362690578214824/package
+verbose unpack /home/sorban/.npm/supervisor/0.3.0/package.tgz
+silly gunzTarPerm modes [ '755', '644' ]
+silly extracting entry package.json
+silly extracting entry README.md
+silly extracting entry lib/supervisor.js
+silly extracting entry lib/cli-wrapper.js
+verbose caching /home/sorban/.npm/supervisor/0.3.0/package/package.json
+verbose loadDefaults supervisor@0.3.0
+silly updated sha bytes 3932
+info shasum a8bd39979cc1ff7015927645e07c65af2b2938c0
+info shasum /home/sorban/.npm/supervisor/0.3.0/package.tgz
+verbose from cache /home/sorban/.npm/supervisor/0.3.0/package/package.json
+verbose chmod /home/sorban/.npm/supervisor/0.3.0/package.tgz 644
+verbose chown [ '/home/sorban/.npm/supervisor/0.3.0/package.tgz', 1000, 1000 ]
+silly resolved [ { name: 'supervisor',
+silly resolved     version: '0.3.0',
+silly resolved     description: 'A supervisor program for running nodejs programs',
+silly resolved     author: { name: 'Isaac Z. Schlueter', email: 'i@izs.me' },
+silly resolved     contributors: 
+silly resolved      [ { name: 'Brian Ehmann', email: 'behmann@gmail.com' },
+silly resolved        { name: 'David Taylor', email: 'david@zensatellite.com' },
+silly resolved        { name: 'Antonio Touriño', email: 'atourino@gmail.com' },
+silly resolved        { name: 'Ian Young', email: 'ian.greenleaf@gmail.com' },
+silly resolved        { name: 'Corey Jewett', email: 'cj@syntheticplayground.com' } ],
+silly resolved     main: 'lib/supervisor.js',
+silly resolved     bin: 
+silly resolved      { 'node-supervisor': 'lib/cli-wrapper.js',
+silly resolved        supervisor: 'lib/cli-wrapper.js' },
+silly resolved     engines: { node: '~0.3.7 || 0.4 || 0.5 || 0.6' },
+silly resolved     preferGlobal: true,
+silly resolved     _id: 'supervisor@0.3.0',
+silly resolved     dependencies: {},
+silly resolved     devDependencies: {},
+silly resolved     optionalDependencies: {},
+silly resolved     _engineSupported: true,
+silly resolved     _npmVersion: '1.1.16',
+silly resolved     _nodeVersion: 'v0.6.15',
+silly resolved     _defaultsLoaded: true,
+silly resolved     dist: { shasum: 'a8bd39979cc1ff7015927645e07c65af2b2938c0' },
+silly resolved     _from: 'supervisor' } ]
+info into /usr/lib supervisor@0.3.0
+info installOne supervisor@0.3.0
+verbose from cache /home/sorban/.npm/supervisor/0.3.0/package/package.json
+info unbuild /usr/lib/node_modules/supervisor
+verbose unpack /home/sorban/.npm/supervisor/0.3.0/package.tgz
+silly gunzTarPerm modes [ '755', '644' ]
+ERR! Error: EACCES, mkdir '/usr/lib/node_modules/supervisor'
+ERR! 
+ERR! Please try running this command again as root/Administrator.
+ERR! 
+ERR! System Linux 3.0.0-17-generic
+ERR! command "node" "/usr/bin/npm" "install" "supervisor" "-g"
+ERR! cwd /home/sorban/Development/spotechnologies.com
+ERR! node -v v0.6.15
+ERR! npm -v 1.1.16
+ERR! path /usr/lib/node_modules/supervisor
+ERR! fstream_path /usr/lib/node_modules/supervisor
+ERR! fstream_type Directory
+ERR! fstream_class DirWriter
+ERR! code EACCES
+ERR! message EACCES, mkdir '/usr/lib/node_modules/supervisor'
+ERR! errno {}
+ERR! fstream_stack /usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+ERR! fstream_stack Object.oncomplete (/usr/lib/node_modules/npm/node_modules/mkdirp/index.js:42:17)
+verbose exit [ 1, true ]
