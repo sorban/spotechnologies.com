@@ -1,0 +1,33 @@
+!!!
+html
+  head
+    title= title
+    link(rel='stylesheet', href='http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css')
+    link(rel='stylesheet', href='http://twitter.github.com/bootstrap/1.4.0/bootstrap-responsive.min.css')
+    link(rel='stylesheet', href='/stylesheets/custom.css')
+  
+    script(type='text/javascript', src='http://code.jquery.com/jquery-1.7.2.min.js')
+    script(type='text/javascript', src='/http://twitter.github.com/bootstrap/1.4.0/bootstrap-modal.js')
+    script(type='text/javascript', src='/javascripts/index.js');
+
+body
+  include topbar
+
+  div.container
+    div.content
+      div.page-header
+        h1 Learning the web.
+          p Welcome to #{title}. This page is dedicated to me learning how to use various web application technologies.
+      div.row-fluid
+        div.span9
+          div.hero-unit
+            h2 Page Content
+            p Primary content of the blog goes here
+            include signupModal
+            
+        div.span3
+            div.well.sidebar-nav
+              h3 Secondary Content
+          
+    div.footer
+      p &copy; #{title} 2012
