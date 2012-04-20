@@ -1,33 +1,30 @@
-!!!
-html
-  head
-    title= title
-    link(rel='stylesheet', href='http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css')
-    link(rel='stylesheet', href='http://twitter.github.com/bootstrap/1.4.0/bootstrap-responsive.min.css')
-    link(rel='stylesheet', href='/stylesheets/custom.css')
-  
-    script(type='text/javascript', src='http://code.jquery.com/jquery-1.7.2.min.js')
-    script(type='text/javascript', src='/http://twitter.github.com/bootstrap/1.4.0/bootstrap-modal.js')
-    script(type='text/javascript', src='/javascripts/index.js');
+include topbar
 
-body
-  include topbar
+div.container
+  div.content
+    div.page-header
+      h1 Learning the web.
+        p Welcome to #{title}. This page is dedicated to me learning how to use various web application technologies.
 
-  div.container
-    div.content
-      div.page-header
-        h1 Learning the web.
-          p Welcome to #{title}. This page is dedicated to me learning how to use various web application technologies.
-      div.row-fluid
-        div.span9
-          div.hero-unit
-            h2 Page Content
-            p Primary content of the blog goes here
-            include signupModal
-            
-        div.span3
-            div.well.sidebar-nav
-              h3 Secondary Content
-          
-    div.footer
-      p &copy; #{title} 2012
+    h1 Designed for everyone, everywhere.
+    p.marketing-byline Need reasons to love Bootstrap? Look no further.
+    .row
+      .span4
+        img.bs-icon(src='assets/img/glyphicons/glyphicons_042_group.png')
+        h2 Built for and by nerds
+        p
+          | Like you, we love building awesome products on the web. We love it so much, we decided to help people just like us do it easier, better, and faster. Bootstrap is built for you.
+      .span4
+        img.bs-icon(src='assets/img/glyphicons/glyphicons_079_podium.png')
+        h2 For all skill levels
+        p
+          | Bootstrap is designed to help people of all skill levels—designer or developer, huge nerd or early beginner. Use it as a complete kit or use to start something more complex.
+      .span4
+        img.bs-icon(src='assets/img/glyphicons/glyphicons_163_iphone.png')
+        h2 Cross-everything
+        p
+          | Originally built with only modern browsers in mind, Bootstrap has evolved to include support for all major browsers (even IE7!) and, with Bootstrap 2, tablets and smartphones, too.
+  hr.soften
+
+    
+include footer

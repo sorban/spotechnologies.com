@@ -1,0 +1,482 @@
+!!! 5
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Download · Twitter Bootstrap
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    //
+       Le styles 
+    link(href='assets/css/bootstrap.css', rel='stylesheet')
+    link(href='assets/css/bootstrap-responsive.css', rel='stylesheet')
+    link(href='assets/css/docs.css', rel='stylesheet')
+    link(href='assets/js/google-code-prettify/prettify.css', rel='stylesheet')
+    //
+       Le HTML5 shim, for IE6-8 support of HTML5 elements 
+    //if lt IE 9
+    //
+       Le fav and touch icons 
+    link(rel='shortcut icon', href='assets/ico/favicon.ico')
+    link(rel='apple-touch-icon-precomposed', sizes='114x114', href='assets/ico/apple-touch-icon-114-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', sizes='72x72', href='assets/ico/apple-touch-icon-72-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', href='assets/ico/apple-touch-icon-57-precomposed.png')
+  body(data-spy='scroll', data-target='.subnav', data-offset='50')
+    //
+       Navbar
+          ================================================== 
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand(href='./index.html') Bootstrap
+          .nav-collapse
+            ul.nav
+              li.
+                a(href='./index.html') Overview
+              li.
+                a(href='./scaffolding.html') Scaffolding
+              li.
+                a(href='./base-css.html') Base CSS
+              li.
+                a(href='./components.html') Components
+              li.
+                a(href='./javascript.html') Javascript plugins
+              li.
+                a(href='./less.html') Using LESS
+              li.divider-vertical
+              li.active
+                a(href='./download.html') Customize
+              li.
+                a(href='./examples.html') Examples
+    .container
+      //
+         Masthead
+        ================================================== 
+      header#overview.jumbotron.subhead
+        h1 Customize and download
+        p.lead
+          a(href='https://github.com/twitter/bootstrap/zipball/master') Download the full repository
+          | or customize your entire Bootstrap build by selecting only the components, javascript plugins, and assets you need.
+        .subnav
+          ul.nav.nav-pills
+            li
+              a(href='#components') 1. Choose components
+            li
+              a(href='#plugins') 2. Select jQuery plugins
+            li
+              a(href='#variables') 3. Customize variables
+            li
+              a(href='#download') 4. Download
+      section#components.download
+        .page-header
+          a.btn.btn-small.pull-right.toggle-all(href='#') Toggle all
+          h1
+            | 1. Choose components
+            small Get just the CSS you need
+        .row.download-builder
+          .span3
+            h3 Scaffolding
+            label.checkbox
+              input(checked='checked', type='checkbox', value='reset.less')
+              | Normalize and reset
+            label.checkbox
+              input(checked='checked', type='checkbox', value='scaffolding.less')
+              | Body type and links
+            label.checkbox
+              input(checked='checked', type='checkbox', value='grid.less')
+              | Grid system
+            label.checkbox
+              input(checked='checked', type='checkbox', value='layouts.less')
+              | Layouts
+            h3 Base CSS
+            label.checkbox
+              input(checked='checked', type='checkbox', value='type.less')
+              | Headings, body, etc
+            label.checkbox
+              input(checked='checked', type='checkbox', value='code.less')
+              | Code and pre
+            label.checkbox
+              input(checked='checked', type='checkbox', value='labels.less')
+              | Labels
+            label.checkbox
+              input(checked='checked', type='checkbox', value='badges.less')
+              | Badges
+            label.checkbox
+              input(checked='checked', type='checkbox', value='tables.less')
+              | Tables
+            label.checkbox
+              input(checked='checked', type='checkbox', value='forms.less')
+              | Forms
+            label.checkbox
+              input(checked='checked', type='checkbox', value='buttons.less')
+              | Buttons
+            label.checkbox
+              input(checked='checked', type='checkbox', value='sprites.less')
+              | Icons
+          //
+             /span 
+          .span3
+            h3 Components
+            label.checkbox
+              input(checked='checked', type='checkbox', value='button-groups.less')
+              | Button groups and dropdowns
+            label.checkbox
+              input(checked='checked', type='checkbox', value='navs.less')
+              | Navs, tabs, and pills
+            label.checkbox
+              input(checked='checked', type='checkbox', value='navbar.less')
+              | Navbar
+            label.checkbox
+              input(checked='checked', type='checkbox', value='breadcrumbs.less')
+              | Breadcrumbs
+            label.checkbox
+              input(checked='checked', type='checkbox', value='pagination.less')
+              | Pagination
+            label.checkbox
+              input(checked='checked', type='checkbox', value='pager.less')
+              | Pager
+            label.checkbox
+              input(checked='checked', type='checkbox', value='thumbnails.less')
+              | Thumbnails
+            label.checkbox
+              input(checked='checked', type='checkbox', value='alerts.less')
+              | Alerts
+            label.checkbox
+              input(checked='checked', type='checkbox', value='progress-bars.less')
+              | Progress bars
+            label.checkbox
+              input(checked='checked', type='checkbox', value='hero-unit.less')
+              | Hero unit
+          //
+             /span 
+          .span3
+            h3 JS Components
+            label.checkbox
+              input(checked='checked', type='checkbox', value='tooltip.less')
+              | Tooltips
+            label.checkbox
+              input(checked='checked', type='checkbox', value='popovers.less')
+              | Popovers
+            label.checkbox
+              input(checked='checked', type='checkbox', value='modals.less')
+              | Modals
+            label.checkbox
+              input(checked='checked', type='checkbox', value='dropdowns.less')
+              | Dropdowns
+            label.checkbox
+              input(checked='checked', type='checkbox', value='accordion.less')
+              | Collapse
+            label.checkbox
+              input(checked='checked', type='checkbox', value='carousel.less')
+              | Carousel
+          //
+             /span 
+          .span3
+            h3 Miscellaneous
+            label.checkbox
+              input(checked='checked', type='checkbox', value='wells.less')
+              | Wells
+            label.checkbox
+              input(checked='checked', type='checkbox', value='close.less')
+              | Close icon
+            label.checkbox
+              input(checked='checked', type='checkbox', value='utilities.less')
+              | Utilities
+            label.checkbox
+              input(checked='checked', type='checkbox', value='component-animations.less')
+              | Component animations
+            h3 Responsive
+            label.checkbox
+              input(checked='checked', type='checkbox', value='responsive.less')
+              | Responsive layouts
+          //
+             /span 
+        //
+           /row 
+      section#plugins.download
+        .page-header
+          a.btn.btn-small.pull-right.toggle-all(href='#') Toggle all
+          h1
+            | 2. Select jQuery plugins
+            small Quickly add only the necessary javascript
+        .row.download-builder
+          .span4
+            label.checkbox
+              input(type='checkbox', checked='true', value='bootstrap-transition.js')
+              | Transitions
+              small (required for any animation)
+            label.checkbox
+              input(type='checkbox', checked='true', value='bootstrap-modal.js')
+              | Modals
+            label.checkbox
+              input(type='checkbox', checked='true', value='bootstrap-dropdown.js')
+              | Dropdowns
+            label.checkbox
+              input(type='checkbox', checked='true', value='bootstrap-scrollspy.js')
+              | Scrollspy
+            label.checkbox
+              input(type='checkbox', checked='true', value='bootstrap-tab.js')
+              | Togglable tabs
+            label.checkbox
+              input(type='checkbox', checked='true', value='bootstrap-tooltip.js')
+              | Tooltips
+          //
+             /span 
+          .span4
+            label.checkbox
+              input(type='checkbox', checked='true', value='bootstrap-popover.js')
+              | Popovers
+              small (requires Tooltips)
+            label.checkbox
+              input(type='checkbox', checked='true', value='bootstrap-alert.js')
+              | Alert messages
+            label.checkbox
+              input(type='checkbox', checked='true', value='bootstrap-button.js')
+              | Buttons
+            label.checkbox
+              input(type='checkbox', checked='true', value='bootstrap-collapse.js')
+              | Collapse
+            label.checkbox
+              input(type='checkbox', checked='true', value='bootstrap-carousel.js')
+              | Carousel
+            label.checkbox
+              input(type='checkbox', checked='true', value='bootstrap-typeahead.js')
+              | Typeahead
+          //
+             /span 
+          .span4
+            h4.muted Heads up!
+            p.muted
+              | All checked plugins will be compiled into a single file, bootstrap.js. All plugins require the latest version of
+              a(href='http://jquery.com/', target='_blank') jQuery
+              | to be included.
+          //
+             /span 
+        //
+           /row 
+      section#variables.download
+        .page-header
+          a.btn.btn-small.pull-right.toggle-all(href='#') Reset to defaults
+          h1
+            | 3. Customize variables
+            small Optionally modify Bootstrap without a compiler
+        .row.download-builder
+          .span3
+            h3 Scaffolding
+            label @bodyBackground
+            input.span3(type='text', placeholder='@white')
+            label @textColor
+            input.span3(type='text', placeholder='@grayDark')
+            h3 Links
+            label @linkColor
+            input.span3(type='text', placeholder='#08c')
+            label @linkColorHover
+            input.span3(type='text', placeholder='darken(@linkColor, 15%)')
+            h3 Colors
+            label @blue
+            input.span3(type='text', placeholder='#049cdb')
+            label @green
+            input.span3(type='text', placeholder='#46a546')
+            label @red
+            input.span3(type='text', placeholder='#9d261d')
+            label @yellow
+            input.span3(type='text', placeholder='#ffc40d')
+            label @orange
+            input.span3(type='text', placeholder='#f89406')
+            label @pink
+            input.span3(type='text', placeholder='#c3325f')
+            label @purple
+            input.span3(type='text', placeholder='#7a43b6')
+            h3 Sprites
+            label @iconSpritePath
+            input.span3(type='text', placeholder='\'../img/glyphicons-halflings.png\'')
+            label @iconWhiteSpritePath
+            input.span3(type='text', placeholder='\'../img/glyphicons-halflings-white.png\'')
+          //
+             /span 
+          .span3
+            h3 Grid system
+            label @gridColumns
+            input.span3(type='text', placeholder='12')
+            label @gridColumnWidth
+            input.span3(type='text', placeholder='60px')
+            label @gridGutterWidth
+            input.span3(type='text', placeholder='20px')
+            h3 Fluid grid system
+            label @fluidGridColumnWidth
+            input.span3(type='text', placeholder='6.382978723%')
+            label @fluidGridGutterWidth
+            input.span3(type='text', placeholder='2.127659574%')
+            h3 Typography
+            label @baseFontSize
+            input.span3(type='text', placeholder='13px')
+            label @baseFontFamily
+            input.span3(type='text', placeholder='\'Helvetica Neue\', Helvetica, Arial, sans-serif')
+            label @baseLineHeight
+            input.span3(type='text', placeholder='18px')
+            label @altFontFamily
+            input.span3(type='text', placeholder='Georgia, \'Times New Roman\', Times, serif;')
+            label @headingsFontFamily
+            input.span3(type='text', placeholder='inherit')
+            label @headingsFontWeight
+            input.span3(type='text', placeholder='bold')
+            label @headingsColor
+            input.span3(type='text', placeholder='inherit')
+            label @heroUnitBackground
+            input.span3(type='text', placeholder='@grayLighter')
+            label @heroUnitHeadingColor
+            input.span3(type='text', placeholder='inherit')
+            label @heroUnitLeadColor
+            input.span3(type='text', placeholder='inherit')
+          //
+             /span 
+          .span3
+            h3 Tables
+            label @tableBackground
+            input.span3(type='text', placeholder='transparent')
+            label @tableBackgroundAccent
+            input.span3(type='text', placeholder='#f9f9f9')
+            label @tableBackgroundHover
+            input.span3(type='text', placeholder='#f5f5f5')
+            label @tableBorder
+            input.span3(type='text', placeholder='#ddd')
+            h3 Navbar
+            label @navbarHeight
+            input.span3(type='text', placeholder='40px')
+            label @navbarBackground
+            input.span3(type='text', placeholder='@grayDarker')
+            label @navbarBackgroundHighlight
+            input.span3(type='text', placeholder='@grayDark')
+            label @navbarText
+            input.span3(type='text', placeholder='@grayLight')
+            label @navbarLinkColor
+            input.span3(type='text', placeholder='@grayLight')
+            label @navbarLinkColorHover
+            input.span3(type='text', placeholder='@white')
+            label @navbarLinkColorActive
+            input.span3(type='text', placeholder='@navbarLinkColorHover')
+            label @navbarLinkBackgroundHover
+            input.span3(type='text', placeholder='transparent')
+            label @navbarLinkBackgroundActive
+            input.span3(type='text', placeholder='@navbarBackground')
+            label @navbarSearchBackground
+            input.span3(type='text', placeholder='lighten(@navbarBackground, 25%)')
+            label @navbarSearchBackgroundFocus
+            input.span3(type='text', placeholder='@white')
+            label @navbarSearchBorder
+            input.span3(type='text', placeholder='darken(@navbarSearchBackground, 30%)')
+            label @navbarSearchPlaceholderColor
+            input.span3(type='text', placeholder='#ccc')
+            h3 Dropdowns
+            label @dropdownBackground
+            input.span3(type='text', placeholder='@white')
+            label @dropdownBorder
+            input.span3(type='text', placeholder='rgba(0,0,0,.2)')
+            label @dropdownLinkColor
+            input.span3(type='text', placeholder='@grayDark')
+            label @dropdownLinkColorHover
+            input.span3(type='text', placeholder='@white')
+            label @dropdownLinkBackgroundHover
+            input.span3(type='text', placeholder='@linkColor')
+          //
+             /span 
+          .span3
+            h3 Forms
+            label @placeholderText
+            input.span3(type='text', placeholder='@grayLight')
+            label @inputBackground
+            input.span3(type='text', placeholder='@white')
+            label @inputBorder
+            input.span3(type='text', placeholder='#ccc')
+            label @inputDisabledBackground
+            input.span3(type='text', placeholder='@grayLighter')
+            label @btnPrimaryBackground
+            input.span3(type='text', placeholder='@linkColor')
+            label @btnPrimaryBackgroundHighlight
+            input.span3(type='text', placeholder='darken(@white, 10%);')
+            h3 Form states & alerts
+            label @warningText
+            input.span3(type='text', placeholder='#c09853')
+            label @warningBackground
+            input.span3(type='text', placeholder='#fcf8e3')
+            label @errorText
+            input.span3(type='text', placeholder='#b94a48')
+            label @errorBackground
+            input.span3(type='text', placeholder='#f2dede')
+            label @successText
+            input.span3(type='text', placeholder='#468847')
+            label @successBackground
+            input.span3(type='text', placeholder='#dff0d8')
+            label @infoText
+            input.span3(type='text', placeholder='#3a87ad')
+            label @infoBackground
+            input.span3(type='text', placeholder='#d9edf7')
+          //
+             /span 
+        //
+           /row 
+      section#download.download
+        .page-header
+          h1
+            | 4. Download
+        .download-btn
+          a.btn.btn-primary(href='#') Customize and Download
+          h4 What's included?
+          p
+            | Downloads include compiled CSS, compiled and minified CSS, and compiled jQuery plugins, all nicely packed up into a zipball for your convenience.
+      //
+         /download 
+      //
+         Footer
+              ================================================== 
+      footer.footer
+        p.pull-right
+          a(href='#') Back to top
+        p
+          | Designed and built with all the love in the world
+          a(href='http://twitter.com/twitter', target='_blank') @twitter
+          | by
+          a(href='http://twitter.com/mdo', target='_blank') @mdo
+          | and
+          a(href='http://twitter.com/fat', target='_blank') @fat
+          | .
+        p
+          | Code licensed under the
+          a(href='http://www.apache.org/licenses/LICENSE-2.0', target='_blank') Apache License v2.0
+          | . Documentation licensed under
+          a(href='http://creativecommons.org/licenses/by/3.0/') CC BY 3.0
+          | .
+        p
+          | Icons from
+          a(href='http://glyphicons.com') Glyphicons Free
+          | , licensed under
+          a(href='http://creativecommons.org/licenses/by/3.0/') CC BY 3.0
+          | .
+    //
+       /container 
+    //
+       Le javascript
+          ================================================== 
+    //
+       Placed at the end of the document so the pages load faster 
+    script(type='text/javascript', src='http://platform.twitter.com/widgets.js')
+    script(src='assets/js/jquery.js')
+    script(src='assets/js/google-code-prettify/prettify.js')
+    script(src='assets/js/bootstrap-transition.js')
+    script(src='assets/js/bootstrap-alert.js')
+    script(src='assets/js/bootstrap-modal.js')
+    script(src='assets/js/bootstrap-dropdown.js')
+    script(src='assets/js/bootstrap-scrollspy.js')
+    script(src='assets/js/bootstrap-tab.js')
+    script(src='assets/js/bootstrap-tooltip.js')
+    script(src='assets/js/bootstrap-popover.js')
+    script(src='assets/js/bootstrap-button.js')
+    script(src='assets/js/bootstrap-collapse.js')
+    script(src='assets/js/bootstrap-carousel.js')
+    script(src='assets/js/bootstrap-typeahead.js')
+    script(src='assets/js/application.js')
+  script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')

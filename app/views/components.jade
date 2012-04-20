@@ -1,0 +1,2185 @@
+!!! 5
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Components · Twitter Bootstrap
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    //
+       Le styles 
+    link(href='assets/css/bootstrap.css', rel='stylesheet')
+    link(href='assets/css/bootstrap-responsive.css', rel='stylesheet')
+    link(href='assets/css/docs.css', rel='stylesheet')
+    link(href='assets/js/google-code-prettify/prettify.css', rel='stylesheet')
+    //
+       Le HTML5 shim, for IE6-8 support of HTML5 elements 
+    //if lt IE 9
+    //
+       Le fav and touch icons 
+    link(rel='shortcut icon', href='assets/ico/favicon.ico')
+    link(rel='apple-touch-icon-precomposed', sizes='114x114', href='assets/ico/apple-touch-icon-114-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', sizes='72x72', href='assets/ico/apple-touch-icon-72-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', href='assets/ico/apple-touch-icon-57-precomposed.png')
+  body(data-spy='scroll', data-target='.subnav', data-offset='50')
+    //
+       Navbar
+          ================================================== 
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand(href='./index.html') Bootstrap
+          .nav-collapse
+            ul.nav
+              li.
+                a(href='./index.html') Overview
+              li.
+                a(href='./scaffolding.html') Scaffolding
+              li.
+                a(href='./base-css.html') Base CSS
+              li.active
+                a(href='./components.html') Components
+              li.
+                a(href='./javascript.html') Javascript plugins
+              li.
+                a(href='./less.html') Using LESS
+              li.divider-vertical
+              li.
+                a(href='./download.html') Customize
+              li.
+                a(href='./examples.html') Examples
+    .container
+      //
+         Masthead
+        ================================================== 
+      header#overview.jumbotron.subhead
+        h1 Components
+        p.lead
+          | Dozens of reusable components are built into Bootstrap to provide navigation, alerts, popovers, and much more.
+        .subnav
+          ul.nav.nav-pills
+            li.dropdown
+              a.dropdown-toggle(data-toggle='dropdown', href='#')
+                | Buttons
+                b.caret
+              ul.dropdown-menu
+                li
+                  a(href='#buttonGroups') Button groups
+                li
+                  a(href='#buttonDropdowns') Button dropdowns
+            li.dropdown
+              a.dropdown-toggle(data-toggle='dropdown', href='#')
+                | Navigation
+                b.caret
+              ul.dropdown-menu
+                li
+                  a(href='#navs') Nav, tabs, pills
+                li
+                  a(href='#navbar') Navbar
+                li
+                  a(href='#breadcrumbs') Breadcrumbs
+                li
+                  a(href='#pagination') Pagination
+            li
+              a(href='#labels') Labels
+            li
+              a(href='#badges') Badges
+            li
+              a(href='#typography') Typography
+            li
+              a(href='#thumbnails') Thumbnails
+            li
+              a(href='#alerts') Alerts
+            li
+              a(href='#progress') Progress bars
+            li
+              a(href='#misc') Miscellaneous
+      //
+         Button Groups
+        ================================================== 
+      section#buttonGroups
+        .page-header
+          h1
+            | Button groups
+            small Join buttons for more toolbar-like functionality
+        .row
+          .span4
+            h3 Button groups
+            p
+              | Use button groups to join multiple buttons together as one composite component. Build them with a series of
+              code <a>
+              | or
+              code <button>
+              | elements.
+            h3 Best practices
+            p We recommend the following guidelines for using button groups and toolbars:
+            ul
+              li
+                | Always use the same element in a single button group,
+                code <a>
+                | or
+                code <button>
+                | .
+              li Don't mix buttons of different colors in the same button group.
+              li
+                | Use icons in addition to or instead of text, but be sure include alt and title text where appropriate.
+            p
+              span.label.label-info Related
+              | Button groups with dropdowns (see below) should be called out separately and always include a dropdown caret to indicate intended behavior.
+          .span4
+            h3 Default example
+            p
+              | Here's how the HTML looks for a standard button group built with anchor tag buttons:
+            .
+              .btn-group(style='margin: 9px 0;')
+                button.btn Left
+                button.btn Middle
+                button.btn Right
+            pre.prettyprint.linenums.
+              \n<div class="btn-group">
+                <button class="btn">1</button>
+                <button class="btn">2</button>
+                <button class="btn">3</button>
+              </div>
+                            
+            h3 Toolbar example
+            p
+              | Combine sets of
+              code <div class="btn-group">
+              | into a
+              code <div class="btn-toolbar">
+              | for more complex components.
+            .btn-toolbar
+              .btn-group
+                button.btn 1
+                button.btn 2
+                button.btn 3
+                button.btn 4
+              .btn-group
+                button.btn 5
+                button.btn 6
+                button.btn 7
+              .btn-group
+                button.btn 8
+            pre.prettyprint.linenums.
+              \n<div class="btn-toolbar">
+                <div class="btn-group">
+                  ...
+                </div>
+              </div>
+                            
+          .span4
+            h3 Checkbox and radio flavors
+            p
+              | Button groups can also function as radios, where only one button may be active, or checkboxes, where any number of buttons may be active. View
+              a(href='./javascript.html#buttons') the Javascript docs
+              | for that.
+            p
+              a.btn.js-btn(href='./javascript.html#buttons') Get the javascript »
+            h3 Dropdowns in button groups
+            p
+              span.label.label-info Heads up!
+              | Buttons with dropdowns must be individually wrapped in their own
+              code .btn-group
+              | within a
+              code .btn-toolbar
+              | for proper rendering.
+      //
+         Split button dropdowns
+        ================================================== 
+      section#buttonDropdowns
+        .page-header
+          h1
+            | Button dropdown menus
+            small Built on button groups to provide contextual menus
+        h2 Button dropdowns
+        .row
+          .span4
+            h3 Overview and examples
+            p
+              | Use any button to trigger a dropdown menu by placing it within a
+              code .btn-group
+              | and providing the proper menu markup.
+            .btn-toolbar(style='margin-top: 18px;')
+              .btn-group
+                button.btn.dropdown-toggle(data-toggle='dropdown')
+                  | Action
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              //
+                 /btn-group 
+              .btn-group
+                button.btn.btn-primary.dropdown-toggle(data-toggle='dropdown')
+                  | Action
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              //
+                 /btn-group 
+              .btn-group
+                button.btn.btn-danger.dropdown-toggle(data-toggle='dropdown')
+                  | Danger
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              //
+                 /btn-group 
+            .btn-toolbar
+              .btn-group
+                button.btn.btn-warning.dropdown-toggle(data-toggle='dropdown')
+                  | Warning
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              //
+                 /btn-group 
+              .btn-group
+                button.btn.btn-success.dropdown-toggle(data-toggle='dropdown')
+                  | Success
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              //
+                 /btn-group 
+              .btn-group
+                button.btn.btn-info.dropdown-toggle(data-toggle='dropdown')
+                  | Info
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              //
+                 /btn-group 
+              .btn-group
+                button.btn.btn-inverse.dropdown-toggle(data-toggle='dropdown')
+                  | Inverse
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              //
+                 /btn-group 
+            //
+               /btn-toolbar 
+          .span8
+            h3 Example markup
+            p
+              | Similar to a button group, our markup uses regular button markup, but with a handful of additions to refine the style and support Bootstrap's dropdown jQuery plugin.
+            pre.prettyprint.linenums.
+              \n<div class="btn-group">
+                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                  Action
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <!-- dropdown menu links -->
+                </ul>
+              </div>
+                            
+        .row
+          .span4
+            h3 Works with all button sizes
+            p
+              | Button dropdowns work at any size. your button sizes to
+              code .btn-large
+              | ,
+              code .btn-small
+              | , or
+              code .btn-mini
+              | .
+            .btn-toolbar(style='margin-top: 18px;')
+              .btn-group
+                button.btn.btn-large.dropdown-toggle(data-toggle='dropdown')
+                  | Large button
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              //
+                 /btn-group 
+              .btn-group
+                button.btn.btn-small.dropdown-toggle(data-toggle='dropdown')
+                  | Small button
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              //
+                 /btn-group 
+              .btn-group
+                button.btn.btn-mini.dropdown-toggle(data-toggle='dropdown')
+                  | Mini button
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              //
+                 /btn-group 
+            //
+               /btn-toolbar 
+          //
+            /span
+          .span4
+            h3 Requires javascript
+            p
+              | Button dropdowns require the
+              a(href='./javascript.html#dropdowns') Bootstrap dropdown plugin
+              | to function.
+            p
+              | In some cases—like mobile—dropdown menus will extend outside the viewport. You need to resolve the alignment manually or with custom javascript.
+          //
+            /span
+        //
+          /row
+        br
+        h2 Split button dropdowns
+        .row
+          .span4
+            h3 Overview and examples
+            p
+              | Building on the button group styles and markup, we can easily create a split button. Split buttons feature a standard action on the left and a dropdown toggle on the right with contextual links.
+            .btn-toolbar(style='margin-top: 18px;')
+              .btn-group
+                button.btn Action
+                button.btn.dropdown-toggle(data-toggle='dropdown')
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              //
+                 /btn-group 
+              .btn-group
+                button.btn.btn-primary Action
+                button.btn.btn-primary.dropdown-toggle(data-toggle='dropdown')
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              //
+                 /btn-group 
+              .btn-group
+                button.btn.btn-danger Danger
+                button.btn.btn-danger.dropdown-toggle(data-toggle='dropdown')
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              //
+                 /btn-group 
+            .btn-toolbar
+              .btn-group
+                button.btn.btn-warning Warning
+                button.btn.btn-warning.dropdown-toggle(data-toggle='dropdown')
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              //
+                 /btn-group 
+              .btn-group
+                button.btn.btn-success Success
+                button.btn.btn-success.dropdown-toggle(data-toggle='dropdown')
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              //
+                 /btn-group 
+              .btn-group
+                button.btn.btn-info Info
+                button.btn.btn-info.dropdown-toggle(data-toggle='dropdown')
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              //
+                 /btn-group 
+            .btn-toolbar
+              .btn-group
+                button.btn.btn-inverse Inverse
+                button.btn.btn-inverse.dropdown-toggle(data-toggle='dropdown')
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              //
+                 /btn-group 
+            //
+               /btn-toolbar 
+            h3 Sizes
+            p
+              | Utilize the extra button classe
+              code .btn-mini
+              | ,
+              code .btn-small
+              | , or
+              code .btn-large
+              | for sizing.
+            .btn-toolbar
+              .btn-group
+                button.btn.btn-large Large action
+                button.btn.btn-large.dropdown-toggle(data-toggle='dropdown')
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              //
+                 /btn-group 
+            //
+               /btn-toolbar 
+            .btn-toolbar
+              .btn-group
+                button.btn.btn-small Small action
+                button.btn.btn-small.dropdown-toggle(data-toggle='dropdown')
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              //
+                 /btn-group 
+            //
+               /btn-toolbar 
+            .btn-toolbar
+              .btn-group
+                button.btn.btn-mini Mini action
+                button.btn.btn-mini.dropdown-toggle(data-toggle='dropdown')
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              //
+                 /btn-group 
+            //
+               /btn-toolbar 
+            pre.prettyprint.linenums.
+              \n<div class="btn-group">
+                ...
+                <ul class="dropdown-menu pull-right">
+                  <!-- dropdown menu links -->
+                </ul>
+              </div>
+                            
+          .span8
+            h3 Example markup
+            p
+              | We expand on the normal button dropdowns to provide a second button action that operates as a separate dropdown trigger.
+            pre.prettyprint.linenums.
+              \n<div class="btn-group">
+                <button class="btn">Action</button>
+                <button class="btn dropdown-toggle" data-toggle="dropdown">
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <!-- dropdown menu links -->
+                </ul>
+              </div>
+                            
+            h3 Dropup menus
+            p
+              | Dropdown menus can also be toggled from the bottom up by adding a single class to the immediate parent of
+              code .dropdown-menu
+              | . It will flip the direction of the
+              code .caret
+              | and reposition the menu itself to move from the bottom up instead of top down.
+            .btn-toolbar(style='margin-top: 9px;')
+              .btn-group.dropup
+                button.btn Dropup
+                button.btn.dropdown-toggle(data-toggle='dropdown')
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              //
+                 /btn-group 
+              .btn-group.dropup
+                button.btn.primary Right dropup
+                button.btn.primary.dropdown-toggle(data-toggle='dropdown')
+                  span.caret
+                ul.dropdown-menu.pull-right
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              //
+                 /btn-group 
+            pre.prettyprint.linenums.
+              \n<div class="btn-group dropup">
+                <button class="btn">Dropup</button>
+                <button class="btn dropdown-toggle" data-toggle="dropdown">
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <!-- dropdown menu links -->
+                </ul>
+              </div>
+                            
+      //
+         Nav, Tabs, & Pills
+        ================================================== 
+      section#navs
+        .page-header
+          h1
+            | Nav, tabs, and pills
+            small Highly customizable list-style navigation
+        h2
+          | Lightweight defaults
+          small Same markup, different classes
+        .row
+          .span4
+            h3 Powerful base class
+            p
+              | All nav components here—tabs, pills, and lists—
+              strong share the same base markup and styles
+              | through the
+              code .nav
+              | class.
+            h3 When to use
+            p
+              | Tabs and pills are great for sections of content or navigating between pages of related content.
+            h3 Component alignment
+            p
+              | To align nav links, use the
+              code .pull-left
+              | or
+              code .pull-right
+              | utility classes. Both classes will add a CSS float in the specified direction.
+          .span4
+            h3 Basic tabs
+            p
+              | Take a regular
+              code <ul>
+              | of links and add
+              code .nav-tabs
+              | :
+            ul.nav.nav-tabs
+              li.active
+                a(href='#') Home
+              li
+                a(href='#') Profile
+              li
+                a(href='#') Messages
+            pre.prettyprint.linenums.
+              \n<ul class="nav nav-tabs">
+                <li class="active">
+                  <a href="#">Home</a>
+                </li>
+                <li><a href="#">...</a></li>
+                <li><a href="#">...</a></li>
+              </ul>
+                            
+          .span4
+            h3 Basic pills
+            p
+              | Take that same HTML, but use
+              code .nav-pills
+              | instead:
+            ul.nav.nav-pills
+              li.active
+                a(href='#') Home
+              li
+                a(href='#') Profile
+              li
+                a(href='#') Messages
+            pre.prettyprint.linenums.
+              \n<ul class="nav nav-pills">
+                <li class="active">
+                  <a href="#">Home</a>
+                </li>
+                <li><a href="#">...</a></li>
+                <li><a href="#">...</a></li>
+              </ul>
+                            
+        h2
+          | Stackable
+          small Make tabs or pills vertical
+        .row
+          .span4
+            h3 How to stack 'em
+            p
+              | As tabs and pills are horizontal by default, just add a second class,
+              code .nav-stacked
+              | , to make them appear vertically stacked.
+          .span4
+            h3 Stacked tabs
+            ul.nav.nav-tabs.nav-stacked
+              li.active
+                a(href='#') Home
+              li
+                a(href='#') Profile
+              li
+                a(href='#') Messages
+            pre.prettyprint.linenums.
+              \n<ul class="nav nav-tabs nav-stacked">
+                ...
+              </ul>
+                            
+          .span4
+            h3 Stacked pills
+            ul.nav.nav-pills.nav-stacked
+              li.active
+                a(href='#') Home
+              li
+                a(href='#') Profile
+              li
+                a(href='#') Messages
+            pre.prettyprint.linenums.
+              \n<ul class="nav nav-pills nav-stacked">
+                ...
+              </ul>
+                            
+        h2
+          | Dropdowns
+          small For advanced nav components
+        .row
+          .span4
+            h3 Rich menus made easy
+            p
+              | Dropdown menus in Bootstrap tabs and pills are super easy and require only a little extra HTML and a lightweight jQuery plugin.
+            p
+              | Head over to the Javascript page to read the docs on
+              a(href='./javascript.html#tabs') initializing dropdowns
+              | in Bootstrap.
+          .span4
+            h3 Tabs with dropdowns
+            ul.nav.nav-tabs
+              li.active
+                a(href='#') Home
+              li
+                a(href='#') Help
+              li.dropdown
+                a.dropdown-toggle(data-toggle='dropdown', href='#')
+                  | Dropdown
+                  b.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              li.dropdown
+                a.dropdown-toggle(data-toggle='dropdown', href='#')
+                  | Dropup
+                  b.caret.bottom-up
+                ul.dropdown-menu.bottom-up.pull-right
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+            pre.prettyprint.linenums.
+              \n<ul class="nav nav-tabs">
+                <li class="dropdown">
+                  <a class="dropdown-toggle"
+                     data-toggle="dropdown"
+                     href="#">
+                      Dropdown
+                      <b class="caret"></b>
+                    </a>
+                  <ul class="dropdown-menu">
+                    <!-- links -->
+                  </ul>
+                </li>
+              </ul>
+                            
+          .span4
+            h3 Pills with dropdowns
+            ul.nav.nav-pills
+              li.active
+                a(href='#') Home
+              li
+                a(href='#') Help
+              li.dropdown
+                a.dropdown-toggle(data-toggle='dropdown', href='#')
+                  | Dropdown
+                  b.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+              li.dropdown
+                a.dropdown-toggle(data-toggle='dropdown', href='#')
+                  | Dropup
+                  b.caret.bottom-up
+                ul.dropdown-menu.bottom-up.pull-right
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider
+                  li
+                    a(href='#') Separated link
+            pre.prettyprint.linenums.
+              \n<ul class="nav nav-pills">
+                <li class="dropdown">
+                  <a class="dropdown-toggle"
+                     data-toggle="dropdown"
+                     href="#">
+                      Dropdown
+                      <b class="caret"></b>
+                    </a>
+                  <ul class="dropdown-menu">
+                    <!-- links -->
+                  </ul>
+                </li>
+              </ul>
+                            
+        h2
+          | Nav lists
+          small Build simple stacked navs, great for sidebars
+        .row
+          .span4
+            h3 Application-style navigation
+            p
+              | Nav lists provide a simple and easy way to build groups of nav links with optional headers. They're best used in sidebars like the Finder in OS X.
+            p
+              | Structurally, they're built on the same core nav styles as tabs and pills, so usage and customization are straightforward.
+            hr
+            h4 With icons
+            p
+              | Nav lists are also easy to equip with icons. Add the proper
+              code <i>
+              | tag with class and you're set.
+            h4 Horizontal dividers
+            p
+              | Add a horizontal divider by creating an empty list item with the class
+              code .divider
+              | , like so:
+            pre.prettyprint.linenums.
+              \n<ul class="nav nav-list">
+                ...
+                <li class="divider"></li>
+                ...
+              </ul>
+                            
+          .span4
+            h3 Example nav list
+            p
+              | Take a list of links and add
+              code class="nav nav-list"
+              | :
+            .well(style='padding: 8px 0;')
+              ul.nav.nav-list
+                li.nav-header List header
+                li.active
+                  a(href='#') Home
+                li
+                  a(href='#') Library
+                li
+                  a(href='#') Applications
+                li.nav-header Another list header
+                li
+                  a(href='#') Profile
+                li
+                  a(href='#') Settings
+                li.divider
+                li
+                  a(href='#') Help
+            //
+               /well 
+            pre.prettyprint.linenums.
+              \n<ul class="nav nav-list">
+                <li class="nav-header">
+                  List header
+                </li>
+                <li class="active">
+                  <a href="#">Home</a>
+                </li>
+                <li>
+                  <a href="#">Library</a>
+                </li>
+                ...
+              </ul>
+                            
+          .span4
+            h3 Example with icons
+            p
+              | Same example, but with
+              code <i>
+              | tags for icons.
+            .well(style='padding: 8px 0;')
+              ul.nav.nav-list
+                li.nav-header List header
+                li.active
+                  a(href='#')
+                    i.icon-white.icon-home
+                    | Home
+                li
+                  a(href='#')
+                    i.icon-book
+                    | Library
+                li
+                  a(href='#')
+                    i.icon-pencil
+                    | Applications
+                li.nav-header Another list header
+                li
+                  a(href='#')
+                    i.icon-user
+                    | Profile
+                li
+                  a(href='#')
+                    i.icon-cog
+                    | Settings
+                li.divider
+                li
+                  a(href='#')
+                    i.icon-flag
+                    | Help
+            //
+               /well 
+            pre.prettyprint.linenums.
+              \n<ul class="nav nav-list">
+                ...
+                <li>
+                  <a href="#">
+                    <i class="icon-book"></i>
+                    Library
+                  </a>
+                </li>
+                ...
+              </ul>
+                            
+        h2
+          | Tabbable nav
+          small Bring tabs to life via javascript
+        .row
+          .span4
+            h3 What's included
+            p
+              | Bring your tabs to life with a simple plugin to toggle between content via tabs. Bootstrap integrates tabbable tabs in four styles: top (default), right, bottom, and left.
+            p Changing between them is easy and only requires changing very little markup.
+          .span4
+            h3 Tabbable example
+            p
+              | To make tabs tabbable, wrap the
+              code .nav-tabs
+              | in another div with class
+              code .tabbable
+              | .
+            .tabbable(style='margin-bottom: 9px;')
+              ul.nav.nav-tabs
+                li.active
+                  a(href='#1', data-toggle='tab') Section 1
+                li
+                  a(href='#2', data-toggle='tab') Section 2
+                li
+                  a(href='#3', data-toggle='tab') Section 3
+              .tab-content
+                #1.tab-pane.active
+                  p I'm in Section 1.
+                #2.tab-pane
+                  p Howdy, I'm in Section 2.
+                #3.tab-pane
+                  p What up girl, this is Section 3.
+            //
+               /tabbable 
+          .span4
+            h3 Custom jQuery plugin
+            p
+              | All tabbable tabs are powered by our lightweight jQuery plugin. Read more about how to bring tabbable tabs to life on the javascript docs page.
+            p
+              a.btn(href='./javascript.html#tabs') Get the javascript →
+        h3 Straightforward markup
+        p
+          | Using tabbable tabs requires a wrapping div, a set of tabs, and a set of tabbable panes of content.
+        pre.prettyprint.linenums.
+          \n<div class="tabbable">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#1" data-toggle="tab">Section 1</a></li>
+              <li><a href="#2" data-toggle="tab">Section 2</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="1">
+                <p>I'm in Section 1.</p>
+              </div>
+              <div class="tab-pane" id="2">
+                <p>Howdy, I'm in Section 2.</p>
+              </div>
+            </div>
+          </div>
+                    
+        h3 Tabbable in any direction
+        .row
+          .span4
+            h4 Tabs on the bottom
+            p Flip the order of the HTML and add a class to put tabs on the bottom.
+            .tabbable.tabs-below
+              .tab-content
+                #A.tab-pane.active
+                  p I'm in Section A.
+                #B.tab-pane
+                  p Howdy, I'm in Section B.
+                #C.tab-pane
+                  p What up girl, this is Section C.
+              ul.nav.nav-tabs
+                li.active
+                  a(href='#A', data-toggle='tab') Section 1
+                li
+                  a(href='#B', data-toggle='tab') Section 2
+                li
+                  a(href='#C', data-toggle='tab') Section 3
+            //
+               /tabbable 
+            pre.prettyprint.linenums(style='margin-top: 11px;').
+              \n<div class="tabbable tabs-below">
+                <div class="tab-content">
+                  ...
+                </div>
+                <ul class="nav nav-tabs">
+                  ...
+                </ul>
+              </div>
+                            
+          .span4
+            h4 Tabs on the left
+            p Swap the class to put tabs on the left.
+            .tabbable.tabs-left
+              ul.nav.nav-tabs
+                li.active
+                  a(href='#lA', data-toggle='tab') Section 1
+                li
+                  a(href='#lB', data-toggle='tab') Section 2
+                li
+                  a(href='#lC', data-toggle='tab') Section 3
+              .tab-content
+                #lA.tab-pane.active
+                  p I'm in Section A.
+                #lB.tab-pane
+                  p Howdy, I'm in Section B.
+                #lC.tab-pane
+                  p What up girl, this is Section C.
+            //
+               /tabbable 
+            pre.prettyprint.linenums.
+              \n<div class="tabbable tabs-left">
+                <ul class="nav nav-tabs">
+                  ...
+                </ul>
+                <div class="tab-content">
+                  ...
+                </div>
+              </div>
+                            
+          .span4
+            h4 Tabs on the right
+            p Swap the class to put tabs on the right.
+            .tabbable.tabs-right
+              ul.nav.nav-tabs
+                li.active
+                  a(href='#rA', data-toggle='tab') Section 1
+                li
+                  a(href='#rB', data-toggle='tab') Section 2
+                li
+                  a(href='#rC', data-toggle='tab') Section 3
+              .tab-content
+                #rA.tab-pane.active
+                  p I'm in Section A.
+                #rB.tab-pane
+                  p Howdy, I'm in Section B.
+                #rC.tab-pane
+                  p What up girl, this is Section C.
+            //
+               /tabbable 
+            pre.prettyprint.linenums.
+              \n<div class="tabbable tabs-right">
+                <ul class="nav nav-tabs">
+                  ...
+                </ul>
+                <div class="tab-content">
+                  ...
+                </div>
+              </div>
+                            
+      //
+         Navbar
+        ================================================== 
+      section#navbar
+        .page-header
+          h1 Navbar
+        h2 Static navbar example
+        p
+          | An example of a static (not fixed to the top) navbar with project name, navigation, and search form.
+        .navbar
+          .navbar-inner
+            .container
+              a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+              a.brand(href='#') Project name
+              .nav-collapse
+                ul.nav
+                  li.active
+                    a(href='#') Home
+                  li
+                    a(href='#') Link
+                  li
+                    a(href='#') Link
+                  li
+                    a(href='#') Link
+                  li.dropdown
+                    a.dropdown-toggle(href='#', data-toggle='dropdown')
+                      | Dropdown
+                      b.caret
+                    ul.dropdown-menu
+                      li
+                        a(href='#') Action
+                      li
+                        a(href='#') Another action
+                      li
+                        a(href='#') Something else here
+                      li.divider
+                      li.nav-header Nav header
+                      li
+                        a(href='#') Separated link
+                      li
+                        a(href='#') One more separated link
+                form.navbar-search.pull-left(action='')
+                  input.search-query.span2(type='text', placeholder='Search')
+                ul.nav.pull-right
+                  li
+                    a(href='#') Link
+                  li.divider-vertical
+                  li.dropdown
+                    a.dropdown-toggle(href='#', data-toggle='dropdown')
+                      | Dropdown
+                      b.caret
+                    ul.dropdown-menu
+                      li
+                        a(href='#') Action
+                      li
+                        a(href='#') Another action
+                      li
+                        a(href='#') Something else here
+                      li.divider
+                      li
+                        a(href='#') Separated link
+              //
+                 /.nav-collapse 
+          //
+             /navbar-inner 
+        //
+           /navbar 
+        .row
+          .span8
+            h3 Navbar scaffolding
+            p
+              | The navbar requires only a few divs to structure it well for static or fixed display.
+            pre.prettyprint.linenums.
+              \n<div class="navbar">
+                <div class="navbar-inner">
+                  <div class="container">
+                    ...
+                  </div>
+                </div>
+              </div>
+                            
+            h3 Fixed navbar
+            p
+              | Fix the navbar to the top or bottom of the viewport with an additional class on the outermost div,
+              code .navbar
+              | .
+            .row
+              .span4
+                pre.prettyprint.linenums.
+                  \n<div class="navbar navbar-fixed-top">
+                    ...
+                  </div>
+                                    
+              //
+                /span
+              .span4
+                pre.prettyprint.linenums.
+                  \n<div class="navbar navbar-fixed-bottom">
+                    ...
+                  </div>
+                                    
+              //
+                /span
+            //
+              /row
+            p
+              | When you affix the navbar, remember to account for the hidden area underneath. Add 40px or more of apdding to the
+              code <body>
+              | . Be sure to add this after the core Bootstrap CSS and before the optional responsive CSS.
+            h3 Brand name
+            p A simple link to show your brand or project name only requires an anchor tag.
+            pre.prettyprint.linenums.
+              \n<a class="brand" href="#">
+                Project name
+              </a>
+                            
+            h3 Forms in navbar
+            p
+              | To properly style and position a form within the navbar, add the appropriate classes as shown below. For a default form, include
+              code .navbar-form
+              | and either
+              code .pull-left
+              | or
+              code .pull-right
+              | to properly align it.
+            pre.prettyprint.linenums.
+              \n<form class="navbar-form pull-left">
+                <input type="text" class="span2">
+              </form>
+                            
+            p
+              | For a more customized search form, add the
+              code .navbar-search
+              | class to receive specialized styles in the navbar.
+            pre.prettyprint.linenums.
+              \n<form class="navbar-search pull-left">
+                <input type="text" class="search-query" placeholder="Search">
+              </form>
+                            
+            h3 Optional responsive variation
+            p
+              | Depending on the amount of content in your topbar, you might want to implement the responsive options. To do so, wrap your nav content in a containing div,
+              code .nav-collapse.collapse
+              | , and add the navbar toggle button,
+              code .btn-navbar
+              | .
+            pre.prettyprint.linenums.
+              \n<div class="navbar">
+                <div class="navbar-inner">
+                  <div class="container">
+              
+                    <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </a>
+              
+                    <!-- Be sure to leave the brand out there if you want it shown -->
+                    <a class="brand" href="#">Project name</a>
+              
+                    <!-- Everything you want hidden at 940px or less, place within here -->
+                    <div class="nav-collapse">
+                      <!-- .nav, .navbar-search, .navbar-form, etc -->
+                    </div>
+              
+                  </div>
+                </div>
+              </div>
+                            
+            .alert.alert-info
+              strong Heads up!
+              | The responsive navbar requires the
+              a(href='./javascript.html#collapse') collapse plugin
+              | .
+          //
+             /.span 
+          .span4
+            h3 Nav links
+            p Nav items are simple to add via unordered lists.
+            pre.prettyprint.linenums.
+              \n<ul class="nav">
+                <li class="active">
+                  <a href="#"              Home</a>
+                </li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+              </ul>
+                            
+            p
+              | You can easily add dividers to your nav links with an empty list item and a simple class. Just add this between links:
+            pre.prettyprint.linenums.
+              \n<ul class="nav">
+                ...
+                <li class="divider-vertical"></li>
+                ...
+              </ul>
+                            
+            h3 Component alignment
+            p
+              | To align a nav, search form, or text, use the
+              code .pull-left
+              | or
+              code .pull-right
+              | utility classes. Both classes will add a CSS float in the specified direction.
+            h3 Adding dropdown menus
+            p
+              | Adding dropdowns and dropups to the nav is super simple, but does require the use of
+              a(href='./javascript.html/#dropdown') our javascript plugin
+              | .
+            pre.prettyprint.linenums.
+              \n<ul class="nav">
+                <li class="dropdown">
+                  <a href="#"
+                        class="dropdown-toggle"
+                        data-toggle="dropdown"              
+                        Account
+                        <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    ...
+                  </ul>
+                </li>
+              </ul>
+                            
+            p
+              a.btn(href='./javascript.html#dropdowns') Get the javascript →
+            hr
+            h3 Text in the navbar
+            p
+              | Wrap strings of text in a
+              code <p>
+              | tag for proper leading and color.
+          //
+             /.span 
+        //
+           /.row 
+      //
+         Breadcrumbs
+        ================================================== 
+      section#breadcrumbs
+        .page-header
+          h1
+            | Breadcrumbs
+            small
+        .row
+          .span6
+            h3 Why use them
+            p
+              | Breadcrumb navigation is used as a way to show users where they are within an app or a site, but not for primary navigation. Keep their use sparse and succinct to be most effective.
+            h3 Examples
+            p A single example shown as it might be displayed across multiple pages.
+            ul.breadcrumb
+              li.active Home
+            ul.breadcrumb
+              li
+                a(href='#') Home
+                span.divider /
+              li.active Library
+            ul.breadcrumb
+              li
+                a(href='#') Home
+                span.divider /
+              li
+                a(href='#') Library
+                span.divider /
+              li.active Data
+          .span6
+            h3 Markup
+            p HTML is your standard unordered list with links.
+            pre.prettyprint.linenums.
+              \n<ul class="breadcrumb">
+                <li>
+                  <a href="#">Home</a> <span class="divider">/</span>
+                </li>
+                <li>
+                  <a href="#">Library</a> <span class="divider">/</span>
+                </li>
+                <li class="active">Data</li>
+              </ul>
+                            
+      //
+         Pagination
+        ================================================== 
+      section#pagination
+        .page-header
+          h1
+            | Pagination
+            small Two options for paging through content
+        h2 Multicon-page pagination
+        .row
+          .span4
+            h3 When to use
+            p
+              | Ultra simplistic and minimally styled pagination inspired by Rdio, great for apps and search results. The large block is hard to miss, easily scalable, and provides large click areas.
+            h3 Stateful page links
+            p
+              | Links are customizable and work in a number of circumstances with the right class.
+              code .disabled
+              | for unclickable links and
+              code .active
+              | for current page.
+            h3 Flexible alignment
+            p
+              | Add either of two optional classes to change the alignment of pagination links:
+              code .pagination-centered
+              | and
+              code .pagination-right
+              | .
+          .span4
+            h3 Examples
+            p
+              | The default pagination component is flexible and works in a number of variations.
+            .pagination
+              ul
+                li.disabled
+                  a(href='#') «
+                li.active
+                  a(href='#') 1
+                li
+                  a(href='#') 2
+                li
+                  a(href='#') 3
+                li
+                  a(href='#') 4
+                li
+                  a(href='#') »
+            .pagination
+              ul
+                li
+                  a(href='#') «
+                li
+                  a(href='#') 10
+                li.active
+                  a(href='#') 11
+                li
+                  a(href='#') 12
+                li
+                  a(href='#') »
+            .pagination
+              ul
+                li
+                  a(href='#') ←
+                li.active
+                  a(href='#') 10
+                li.disabled
+                  a(href='#') ...
+                li
+                  a(href='#') 20
+                li
+                  a(href='#') →
+            .pagination.pagination-centered
+              ul
+                li.active
+                  a(href='#') 1
+                li
+                  a(href='#') 2
+                li
+                  a(href='#') 3
+                li
+                  a(href='#') 4
+                li
+                  a(href='#') 5
+          .span4
+            h3 Markup
+            p
+              | Wrapped in a
+              code <div>
+              | , pagination is just a
+              code <ul>
+              | .
+            pre.prettyprint.linenums.
+              \n<div class="pagination">
+                <ul>
+                  <li><a href="#">Prev</a></li              
+                  <li class="active">
+                    <a href="#">1</a>
+                  </li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">Next</a></li              
+                </ul>
+              </div>
+                            
+        //
+           /row 
+        h2
+          | Pager
+          small For quick previous and next links
+        .row
+          .span4
+            h3 About pager
+            p
+              | The pager component is a set of links for simple pagination implementations with light markup and even lighter styles. It's great for simple sites like blogs or magazines.
+            h4 Optional disabled state
+            p
+              | Pager links also use the general
+              code .disabled
+              | class from the pagination.
+          .span4
+            h3 Default example
+            p By default, the pager centers links.
+            ul.pager
+              li
+                a(href='#') Previous
+              li
+                a(href='#') Next
+            pre.prettyprint.linenums.
+              \n<ul class="pager">
+                <li>
+                  <a href="#">Previous</a>
+                </li>
+                <li>
+                  <a href="#">Next</a>
+                </li>
+              </ul>
+                            
+          .span4
+            h3 Aligned links
+            p Alternatively, you can align each link to the sides:
+            ul.pager
+              li.previous
+                a(href='#') ← Older
+              li.next
+                a(href='#') Newer →
+            pre.prettyprint.linenums.
+              \n<ul class="pager">
+                <li class="previous">
+                  <a href="#">&larr; Older</a>
+                </li>
+                <li class="next">
+                  <a href="#">Newer &rarr;</a>
+                </li>
+              </ul>
+                            
+        //
+           /row 
+      //
+         Labels
+        ================================================== 
+      section#labels
+        .page-header
+          h1
+            | Inline labels
+            small Label and annotate text
+        table.table.table-bordered.table-striped
+          thead
+            tr
+              th Labels
+              th Markup
+          tbody
+            tr
+              td
+                span.label Default
+              td
+                code <span class="label">Default</span>
+            tr
+              td
+                span.label.label-success Success
+              td
+                code <span class="label label-success">Success</span>
+            tr
+              td
+                span.label.label-warning Warning
+              td
+                code <span class="label label-warning">Warning</span>
+            tr
+              td
+                span.label.label-important Important
+              td
+                code <span class="label label-important">Important</span>
+            tr
+              td
+                span.label.label-info Info
+              td
+                code <span class="label label-info">Info</span>
+            tr
+              td
+                span.label.label-inverse Inverse
+              td
+                code <span class="label label-inverse">Inverse</span>
+      //
+         Badges
+        ================================================== 
+      section#badges
+        .page-header
+          h1
+            | Badges
+            small Indicators and unread counts
+        .row
+          .span4
+            h3 About
+            p
+              | Badges are small, simple components for displaying an indicator or count of some sort. They're commonly found in email clients like Mail.app or on mobile apps for push notifications.
+          //
+             /.span 
+          .span8
+            h3 Available classes
+            table.table.table-bordered.table-striped
+              thead
+                tr
+                  th Name
+                  th Example
+                  th Markup
+              tbody
+                tr
+                  td
+                    | Default
+                  td
+                    span.badge 1
+                  td
+                    code <span class="badge">1</span>
+                tr
+                  td
+                    | Success
+                  td
+                    span.badge.badge-success 2
+                  td
+                    code <span class="badge badge-success">2</span>
+                tr
+                  td
+                    | Warning
+                  td
+                    span.badge.badge-warning 4
+                  td
+                    code <span class="badge badge-warning">4</span>
+                tr
+                  td
+                    | Error
+                  td
+                    span.badge.badge-error 6
+                  td
+                    code <span class="badge badge-error">6</span>
+                tr
+                  td
+                    | Info
+                  td
+                    span.badge.badge-info 8
+                  td
+                    code <span class="badge badge-info">8</span>
+                tr
+                  td
+                    | Inverse
+                  td
+                    span.badge.badge-inverse 10
+                  td
+                    code <span class="badge badge-inverse">10</span>
+          //
+             /.span 
+        //
+           /.row 
+      //
+         Typographic components
+        ================================================== 
+      section#typography
+        .page-header
+          h1
+            | Typographic components
+            small Page header and hero unit for segmenting content
+        h2 Hero unit
+        .row
+          .span4
+            p
+              | Bootstrap provides a lightweight, flexible component called a hero unit to showcase content on your site. It works well on marketing and content-heavy sites.
+            h3 Markup
+            p
+              | Wrap your content in a
+              code div
+              | like so:
+            pre.prettyprint.linenums.
+              \n<div class="hero-unit">
+                <h1>Heading</h1>
+                <p>Tagline</p>
+                <p>
+                  <a class="btn btn-primary btn-large">
+                    Learn more
+                  </a>
+                </p>
+              </div>
+                            
+          .span8
+            .hero-unit
+              h1 Hello, world!
+              p
+                | This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
+              p
+                a.btn.btn-primary.btn-large Learn more
+        //
+           /row 
+        h2 Page header
+        .row
+          .span4
+            p
+              | A simple shell for an
+              code h1
+              | to appropratiely space out and segment sections of content on a page. It can utilize the
+              code h1
+              | 's default
+              code small
+              | , element as well most other components (with additional styles).
+          .span8
+            .page-header
+              h1
+                | Example page header
+                small Subtext for header
+            pre.prettyprint.linenums.
+              \n<div class="page-header">
+                <h1>Example page header</h1>
+              </div>
+                            
+        //
+           /row 
+      //
+         Thumbnails
+        ================================================== 
+      section#thumbnails
+        .page-header
+          h1
+            | Thumbnails
+            small Grids of images, videos, text, and more
+        .row
+          .span6
+            h2 Default thumbnails
+            p
+              | By default, Bootstrap's thumbnails are designed to showcase linked images with minimal required markup.
+            ul.thumbnails
+              li.span3
+                a.thumbnail(href='#')
+                  img(src='http://placehold.it/260x180', alt='')
+              li.span3
+                a.thumbnail(href='#')
+                  img(src='http://placehold.it/260x180', alt='')
+              li.span3
+                a.thumbnail(href='#')
+                  img(src='http://placehold.it/260x180', alt='')
+              li.span3
+                a.thumbnail(href='#')
+                  img(src='http://placehold.it/260x180', alt='')
+          .span6
+            h2 Highly customizable
+            p
+              | With a bit of extra markup, it's possible to add any kind of HTML content like headings, paragraphs, or buttons into thumbnails.
+            ul.thumbnails
+              li.span3
+                .thumbnail
+                  img(src='http://placehold.it/260x180', alt='')
+                  .caption
+                    h5 Thumbnail label
+                    p
+                      | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                    p
+                      a.btn.btn-primary(href='#') Action
+                      a.btn(href='#') Action
+              li.span3
+                .thumbnail
+                  img(src='http://placehold.it/260x180', alt='')
+                  .caption
+                    h5 Thumbnail label
+                    p
+                      | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                    p
+                      a.btn.btn-primary(href='#') Action
+                      a.btn(href='#') Action
+        .row
+          .span4
+            h3 Why use thumbnails
+            p
+              | Thumbnails (previously
+              code .media-grid
+              | up until v1.4) are great for grids of photos or videos, image search results, retail products, portfolios, and much more. They can be links or static content.
+          .span4
+            h3 Simple, flexible markup
+            p
+              | Thumbnail markup is simple—a
+              code ul
+              | with any number of
+              code li
+              | elements is all that is required. It's also super flexible, allowing for any type of content with just a bit more markup to wrap your contents.
+          .span4
+            h3 Uses grid column sizes
+            p
+              | Lastly, the thumbnails component uses existing grid system classes—like
+              code .span2
+              | or
+              code .span3
+              | —for control of thumbnail dimensions.
+        .row
+          .span6
+            h2 The markup
+            p
+              | As mentioned previously, the required markup for thumbnails is light and straightforward. Here's a look at the default setup
+              strong for linked images
+              | :
+            pre.prettyprint.linenums.
+              \n<ul class="thumbnails">
+                <li class="span3">
+                  <a href="#" class="thumbnail">
+                    <img src="http://placehold.it/260x180" alt="">
+                  </a>
+                </li>
+                ...
+              </ul>
+                            
+            p
+              | For custom HTML content in thumbnails, the markup changes slightly. To allow block level content anywhere, we swap the
+              code <a>
+              | for a
+              code <div>
+              | like so:
+            pre.prettyprint.linenums.
+              \n<ul class="thumbnails">
+                <li class="span3">
+                  <div class="thumbnail">
+                    <img src="http://placehold.it/260x180" alt="">
+                    <h5>Thumbnail label</h5>
+                    <p>Thumbnail caption right here...</p>
+                  </div>
+                </li>
+                ...
+              </ul>
+                            
+          .span6
+            h2 More examples
+            p
+              | Explore all your options with the various grid classes available to you. You can also mix and match different sizes.
+            ul.thumbnails
+              li.span4
+                a.thumbnail(href='#')
+                  img(src='http://placehold.it/360x268', alt='')
+              li.span2
+                a.thumbnail(href='#')
+                  img(src='http://placehold.it/160x120', alt='')
+              li.span2
+                a.thumbnail(href='#')
+                  img(src='http://placehold.it/160x120', alt='')
+              li.span2
+                a.thumbnail(href='#')
+                  img(src='http://placehold.it/160x120', alt='')
+              li.span2
+                a.thumbnail(href='#')
+                  img(src='http://placehold.it/160x120', alt='')
+              li.span2
+                a.thumbnail(href='#')
+                  img(src='http://placehold.it/160x120', alt='')
+      //
+         Alerts & Messages
+        ================================================== 
+      section#alerts
+        .page-header
+          h1
+            | Alerts
+            small Styles for success, warning, and error messages
+        h2 Lightweight defaults
+        .row
+          .span4
+            h3 Rewritten base class
+            p
+              | With Bootstrap 2, we've simplified the base class:
+              code .alert
+              | instead of
+              code .alert-message
+              | . We've also reduced the minimum required markup—no
+              code <p>
+              | is required by default, just the outer
+              code <div>
+              | .
+            h3 Single alert message
+            p
+              | For a more durable component with less code, we've removed the differentiating look for block alerts, messages that come with more padding and typically more text. The class also has changed to
+              code .alert-block
+              | .
+            hr
+            h3 Goes great with javascript
+            p
+              | Bootstrap comes with a great jQuery plugin that supports alert messages, making dismissing them quick and easy.
+            p
+              a.btn.js-btn(href='./javascript.html#alerts') Get the plugin »
+          .span8
+            h3 Example alerts
+            p Wrap your message and an optional close icon in a div with simple class.
+            .alert
+              a.close(data-dismiss='alert') ×
+              strong Warning!
+              | Best check yo self, you're not looking too good.
+            pre.prettyprint.linenums.
+              \n<div class="alert">
+                <a class="close" data-dismiss="alert">×</a>
+                <strong>Warning!</strong> Best check yo self, you're not looking too good.
+              </div>
+                            
+            p
+              | Easily extend the standard alert message with two optional classes:
+              code .alert-block
+              | for more padding and text controls and
+              code .alert-heading
+              | for a matching heading.
+            .alert.alert-block
+              a.close(data-dismiss='alert') ×
+              h4.alert-heading Warning!
+              p
+                | Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+            pre.prettyprint.linenums.
+              \n<div class="alert alert-block">
+                <a class="close" data-dismiss="alert">×</a>
+                <h4 class="alert-heading">Warning!</h4>
+                Best check yo self, you're not...
+              </div>
+                            
+        h2
+          | Contextual alternatives
+          small Add optional classes to change an alert's connotation
+        .row
+          .span4
+            h3 Error or danger
+            .alert.alert-error
+              a.close(data-dismiss='alert') ×
+              strong Oh snap!
+              | Change a few things up and try submitting again.
+            pre.prettyprint.linenums.
+              \n<div class="alert alert-error">
+                ...
+              </div>
+                            
+          .span4
+            h3 Success
+            .alert.alert-success
+              a.close(data-dismiss='alert') ×
+              strong Well done!
+              | You successfully read this important alert message.
+            pre.prettyprint.linenums.
+              \n<div class="alert alert-success">
+                ...
+              </div>
+                            
+          .span4
+            h3 Information
+            .alert.alert-info
+              a.close(data-dismiss='alert') ×
+              strong Heads up!
+              | This alert needs your attention, but it's not super important.
+            pre.prettyprint.linenums.
+              \n<div class="alert alert-info">
+                ...
+              </div>
+                            
+      //
+         Progress bars
+        ================================================== 
+      section#progress
+        .page-header
+          h1
+            | Progress bars
+            small For loading, redirecting, or action status
+        h2 Examples and markup
+        .row
+          .span4
+            h3 Basic
+            p Default progress bar with a vertical gradient.
+            .progress
+              .bar(style='width: 60%;')
+            pre.prettyprint.linenums.
+              \n<div class="progress">
+                <div class="bar"
+                     style="width: 60%;"></div>
+              </div>
+                            
+          .span4
+            h3 Striped
+            p Uses a gradient to create a striped effect (no IE).
+            .progress.progress-striped
+              .bar(style='width: 20%;')
+            pre.prettyprint.linenums.
+              \n<div class="progress progress-striped">
+                <div class="bar"
+                     style="width: 20%;"></div>
+              </div>
+                            
+          .span4
+            h3 Animated
+            p Takes the striped example and animates it (no IE).
+            .progress.progress-striped.active
+              .bar(style='width: 45%;')
+            pre.prettyprint.linenums.
+              \n<div class="progress progress-striped
+                   active">
+                <div class="bar"
+                     style="width: 40%;"></div>
+              </div>
+                            
+        h2 Options and browser support
+        .row
+          .span3
+            h3 Additional colors
+            p
+              | Progress bars use some of the same button and alert classes for consistent styles.
+            .progress.progress-info(style='margin-bottom: 9px;')
+              .bar(style='width: 20%;')
+            .progress.progress-success(style='margin-bottom: 9px;')
+              .bar(style='width: 40%;')
+            .progress.progress-warning(style='margin-bottom: 9px;')
+              .bar(style='width: 60%;')
+            .progress.progress-danger(style='margin-bottom: 9px;')
+              .bar(style='width: 80%;')
+          .span3
+            h3 Striped bars
+            p Similar to the solid colors, we have varied striped progress bars.
+            .progress.progress-info.progress-striped(style='margin-bottom: 9px;')
+              .bar(style='width: 20%;')
+            .progress.progress-success.progress-striped(style='margin-bottom: 9px;')
+              .bar(style='width: 40%;')
+            .progress.progress-warning.progress-striped(style='margin-bottom: 9px;')
+              .bar(style='width: 60%;')
+            .progress.progress-danger.progress-striped(style='margin-bottom: 9px;')
+              .bar(style='width: 80%;')
+          .span3
+            h3 Behavior
+            p
+              | Progress bars use CSS3 transitions, so if you dynamically adjust the width via javascript, it will smoothly resize.
+            p
+              | If you use the
+              code .active
+              | class, your
+              code .progress-striped
+              | progress bars will animate the stripes left to right.
+          .span3
+            h3 Browser support
+            p
+              | Progress bars use CSS3 gradients, transitions, and animations to achieve all their effects. These features are not supported in IE7-9 or older versions of Firefox.
+            p Opera and IE do not support animations at this time.
+      //
+         Miscellaneous
+        ================================================== 
+      section#misc
+        .page-header
+          h1
+            | Miscellaneous
+            small Lightweight utility components
+        .row
+          .span4
+            h2 Wells
+            p Use the well as a simple effect on an element to give it an inset effect.
+            .well
+              | Look, I'm in a well!
+            pre.prettyprint.linenums.
+              \n<div class="well">
+                ...
+              </div>
+                            
+          //
+            /span
+          .span4
+            h2 Close icon
+            p Use the generic close icon for dismissing content like modals and alerts.
+            p
+              a.close(style='float: none;') ×
+            pre.prettyprint.linenums.
+              \n<a class="close">&times;</a>              
+          //
+            /span
+        //
+          /row
+      //
+         Footer
+              ================================================== 
+      footer.footer
+        p.pull-right
+          a(href='#') Back to top
+        p
+          | Designed and built with all the love in the world
+          a(href='http://twitter.com/twitter', target='_blank') @twitter
+          | by
+          a(href='http://twitter.com/mdo', target='_blank') @mdo
+          | and
+          a(href='http://twitter.com/fat', target='_blank') @fat
+          | .
+        p
+          | Code licensed under the
+          a(href='http://www.apache.org/licenses/LICENSE-2.0', target='_blank') Apache License v2.0
+          | . Documentation licensed under
+          a(href='http://creativecommons.org/licenses/by/3.0/') CC BY 3.0
+          | .
+        p
+          | Icons from
+          a(href='http://glyphicons.com') Glyphicons Free
+          | , licensed under
+          a(href='http://creativecommons.org/licenses/by/3.0/') CC BY 3.0
+          | .
+    //
+       /container 
+    //
+       Le javascript
+          ================================================== 
+    //
+       Placed at the end of the document so the pages load faster 
+    script(type='text/javascript', src='http://platform.twitter.com/widgets.js')
+    script(src='assets/js/jquery.js')
+    script(src='assets/js/google-code-prettify/prettify.js')
+    script(src='assets/js/bootstrap-transition.js')
+    script(src='assets/js/bootstrap-alert.js')
+    script(src='assets/js/bootstrap-modal.js')
+    script(src='assets/js/bootstrap-dropdown.js')
+    script(src='assets/js/bootstrap-scrollspy.js')
+    script(src='assets/js/bootstrap-tab.js')
+    script(src='assets/js/bootstrap-tooltip.js')
+    script(src='assets/js/bootstrap-popover.js')
+    script(src='assets/js/bootstrap-button.js')
+    script(src='assets/js/bootstrap-collapse.js')
+    script(src='assets/js/bootstrap-carousel.js')
+    script(src='assets/js/bootstrap-typeahead.js')
+    script(src='assets/js/application.js')
+  script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')

@@ -1,0 +1,931 @@
+!!! 5
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Less · Twitter Bootstrap
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    //
+       Le styles 
+    link(href='assets/css/bootstrap.css', rel='stylesheet')
+    link(href='assets/css/bootstrap-responsive.css', rel='stylesheet')
+    link(href='assets/css/docs.css', rel='stylesheet')
+    link(href='assets/js/google-code-prettify/prettify.css', rel='stylesheet')
+    //
+       Le HTML5 shim, for IE6-8 support of HTML5 elements 
+    //if lt IE 9
+    //
+       Le fav and touch icons 
+    link(rel='shortcut icon', href='assets/ico/favicon.ico')
+    link(rel='apple-touch-icon-precomposed', sizes='114x114', href='assets/ico/apple-touch-icon-114-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', sizes='72x72', href='assets/ico/apple-touch-icon-72-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', href='assets/ico/apple-touch-icon-57-precomposed.png')
+  body(data-spy='scroll', data-target='.subnav', data-offset='50')
+    //
+       Navbar
+          ================================================== 
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand(href='./index.html') Bootstrap
+          .nav-collapse
+            ul.nav
+              li.
+                a(href='./index.html') Overview
+              li.
+                a(href='./scaffolding.html') Scaffolding
+              li.
+                a(href='./base-css.html') Base CSS
+              li.
+                a(href='./components.html') Components
+              li.
+                a(href='./javascript.html') Javascript plugins
+              li.active
+                a(href='./less.html') Using LESS
+              li.divider-vertical
+              li.
+                a(href='./download.html') Customize
+              li.
+                a(href='./examples.html') Examples
+    .container
+      //
+         Masthead
+        ================================================== 
+      header#overview.jumbotron.subhead
+        h1 Using LESS with Bootstrap
+        p.lead
+          | Customize and extend Bootstrap with
+          a(href='http://lesscss.org', target='_blank') LESS
+          | , a CSS preprocessor, to take advantage of the variables, mixins, and more used to build Bootstrap's CSS.
+        .subnav
+          ul.nav.nav-pills
+            li
+              a(href='#builtWith') Built with Less
+            li
+              a(href='#variables') Variables
+            li
+              a(href='#mixins') Mixins
+            li
+              a(href='#compiling') Compiling Bootstrap
+      //
+         BUILT WITH LESS
+        ================================================== 
+      section#builtWith
+        .page-header
+          h1 Built with LESS
+        .row
+          .span4
+            h3 Why LESS?
+            p
+              | Bootstrap is made with LESS at its core, a dynamic stylesheet language created by our good friend,
+              a(href='http://cloudhead.io') Alexis Sellier
+              | . It makes developing systems-based CSS faster, easier, and more fun.
+          .span4
+            h3 What's included?
+            p
+              | As an extension of CSS, LESS includes variables, mixins for reusable snippets of code, operations for simple math, nesting, and even color functions.
+          .span4
+            h3 Learn more
+            img(style='float: right; height: 36px;', src='assets/img/less-logo-large.png', alt='LESS CSS')
+            p
+              | Visit the official website at
+              a(href='http://lesscss.org') http://lesscss.org
+              | to learn more.
+        .row
+          .span4
+            h3
+              a(href='#variables') Variables
+            p
+              | Managing colors and pixel values in CSS can be a bit of a pain, usually full of copy and paste. Not with LESS though—assign colors or pixel values as variables and change them once.
+          .span4
+            h3
+              a(href='#mixins') Mixins
+            p
+              | Those three border-radius declarations you need to make in regular ol' CSS? Now they're down to one line with the help of mixins, snippets of code you can reuse anywhere.
+          .span4
+            h3 Operations
+            p
+              | Make your grid, leading, and more super flexible by doing the math on the fly with operations. Multiply, divide, add, and subtract your way to CSS sanity.
+      //
+         VARIABLES
+        ================================================== 
+      section#variables
+        .page-header
+          h1
+            | Bootstrap variables
+            small LESS variables, their values, and usage guidelines
+        .row
+          .span6
+            h3 Hyperlinks
+            table.table.table-bordered.table-striped
+              tbody
+                tr
+                  td.span2
+                    code @linkColor
+                  td #08c
+                  td Default link text color
+                  td.swatch-col
+                    span.swatch(style='background-color: #08c;')
+                tr
+                  td
+                    code @linkColorHover
+                  td
+                    code darken(@linkColor, 15%)
+                  td Default link text hover color
+                  td
+                    span.swatch(style='background-color: #005580;')
+            h3 Grid system
+            table.table.table-bordered.table-striped
+              tbody
+                tr
+                  td.span2
+                    code @gridColumns
+                  td 12
+                tr
+                  td
+                    code @gridColumnWidth
+                  td 60px
+                tr
+                  td
+                    code @gridGutterWidth
+                  td 20px
+                tr
+                  td
+                    code @fluidGridColumnWidth
+                  td 6.382978723%
+                tr
+                  td
+                    code @fluidGridGutterWidth
+                  td 2.127659574%
+            h3 Typography
+            table.table.table-bordered.table-striped
+              tbody
+                tr
+                  td.span2
+                    code @baseFontSize
+                  td 13px
+                tr
+                  td
+                    code @baseFontFamily
+                  td
+                    code "Helvetica Neue", Helvetica, Arial, sans-serif
+                tr
+                  td
+                    code @baseLineHeight
+                  td 18px
+          .span6
+            h3 Grayscale colors
+            table.table.table-bordered.table-striped
+              tbody
+                tr
+                  td.span2
+                    code @black
+                  td #000
+                  td.swatch-col
+                    span.swatch(style='background-color: #000;')
+                tr
+                  td
+                    code @grayDarker
+                  td #222
+                  td
+                    span.swatch(style='background-color: #222;')
+                tr
+                  td
+                    code @grayDark
+                  td #333
+                  td
+                    span.swatch(style='background-color: #333;')
+                tr
+                  td
+                    code @gray
+                  td #555
+                  td
+                    span.swatch(style='background-color: #555;')
+                tr
+                  td
+                    code @grayLight
+                  td #999
+                  td
+                    span.swatch(style='background-color: #999;')
+                tr
+                  td
+                    code @grayLighter
+                  td #eee
+                  td
+                    span.swatch(style='background-color: #eee;')
+                tr
+                  td
+                    code @white
+                  td #fff
+                  td
+                    span.swatch.swatch-bordered(style='background-color: #fff;')
+            h3 Accent colors
+            table.table.table-bordered.table-striped
+              tbody
+                tr
+                  td.span2
+                    code @blue
+                  td #049cdb
+                  td.swatch-col
+                    span.swatch(style='background-color: #049cdb;')
+                tr
+                  td
+                    code @green
+                  td #46a546
+                  td
+                    span.swatch(style='background-color: #46a546;')
+                tr
+                  td
+                    code @red
+                  td #9d261d
+                  td
+                    span.swatch(style='background-color: #9d261d;')
+                tr
+                  td
+                    code @yellow
+                  td #ffc40d
+                  td
+                    span.swatch(style='background-color: #ffc40d;')
+                tr
+                  td
+                    code @orange
+                  td #f89406
+                  td
+                    span.swatch(style='background-color: #f89406;')
+                tr
+                  td
+                    code @pink
+                  td #c3325f
+                  td
+                    span.swatch(style='background-color: #c3325f;')
+                tr
+                  td
+                    code @purple
+                  td #7a43b6
+                  td
+                    span.swatch(style='background-color: #7a43b6;')
+        //
+           /row 
+        h3 Components
+        .row
+          .span6
+            h4 Buttons
+            table.table.table-bordered.table-striped
+              tbody
+                tr
+                  td.span3
+                    code @primaryButtonBackground
+                  td
+                    code @linkColor
+                  td.swatch-col
+                    span.swatch(style='background-color: #08c;')
+            h4 Forms
+            table.table.table-bordered.table-striped
+              tbody
+                tr
+                  td.span3
+                    code @placeholderText
+                  td
+                    code @grayLight
+                  td.swatch-col
+                    span.swatch(style='background-color: #999;')
+            h4 Navbar
+            table.table.table-bordered.table-striped
+              tbody
+                tr
+                  td.span3
+                    code @navbarHeight
+                  td 40px
+                  td.swatch-col
+                tr
+                  td
+                    code @navbarBackground
+                  td
+                    code @grayDarker
+                  td
+                    span.swatch(style='background-color: #222;')
+                tr
+                  td
+                    code @navbarBackgroundHighlight
+                  td
+                    code @grayDark
+                  td
+                    span.swatch(style='background-color: #333;')
+                tr
+                  td
+                    code @navbarText
+                  td
+                    code @grayLight
+                  td
+                    span.swatch(style='background-color: #999;')
+                tr
+                  td
+                    code @navbarLinkColor
+                  td
+                    code @grayLight
+                  td
+                    span.swatch(style='background-color: #999;')
+                tr
+                  td
+                    code @navbarLinkColorHover
+                  td
+                    code @white
+                  td
+                    span.swatch.swatch-bordered(style='background-color: #fff;')
+          .span6
+            h4 Form states and alerts
+            table.table.table-bordered.table-striped
+              tbody
+                tr
+                  td.span3
+                    code @warningText
+                  td #c09853
+                  td
+                    span.swatch(style='background-color: #c09853;')
+                tr
+                  td
+                    code @warningBackground
+                  td #f3edd2
+                  td.swatch-col
+                    span.swatch(style='background-color: #f3edd2;')
+                tr
+                  td
+                    code @errorText
+                  td #b94a48
+                  td
+                    span.swatch(style='background-color: #b94a48;')
+                tr
+                  td
+                    code @errorBackground
+                  td #f2dede
+                  td
+                    span.swatch(style='background-color: #f2dede;')
+                tr
+                  td
+                    code @successText
+                  td #468847
+                  td
+                    span.swatch(style='background-color: #468847;')
+                tr
+                  td
+                    code @successBackground
+                  td #dff0d8
+                  td
+                    span.swatch(style='background-color: #dff0d8;')
+                tr
+                  td
+                    code @infoText
+                  td #3a87ad
+                  td
+                    span.swatch(style='background-color: #3a87ad;')
+                tr
+                  td
+                    code @infoBackground
+                  td #d9edf7
+                  td
+                    span.swatch(style='background-color: #d9edf7;')
+        //
+           /row 
+      //
+         MIXINS
+        ================================================== 
+      section#mixins
+        .page-header
+          h1
+            | Bootstrap mixins
+            small
+        h2 About mixins
+        .row
+          .span4
+            h3 Basic mixins
+            p
+              | A basic mixin is essentially an include or a partial for a snippet of CSS. They're written just like a CSS class and can be called anywhere.
+            pre.prettyprint.linenums.
+              \n.element {
+                .clearfix();
+              }
+                            
+          //
+             /span4 
+          .span4
+            h3 Parametric mixins
+            p
+              | A parametric mixin is just like a basic mixin, but it also accepts parameters (hence the name) with optional default values.
+            pre.prettyprint.linenums.
+              \n.element {
+                .border-radius(4px);
+              }
+                            
+          //
+             /span4 
+          .span4
+            h3 Easily add your own
+            p
+              | Nearly all of Bootstrap's mixins are stored in mixins.less, a wonderful utility .less file that enables you to use a mixin in any of the .less files in the toolkit.
+            p So, go ahead and use the existing ones or feel free to add your own as you need.
+          //
+             /span4 
+        //
+           /row 
+        h2 Included mixins
+        h3 Utilities
+        table.table.table-bordered.table-striped
+          thead
+            tr
+              th.span4 Mixin
+              th Parameters
+              th Usage
+          tbody
+            tr
+              td
+                code .clearfix()
+              td
+                em.muted none
+              td Add to any parent to clear floats within
+            tr
+              td
+                code .tab-focus()
+              td
+                em.muted none
+              td Apply the Webkit focus style and round Firefox outline
+            tr
+              td
+                code .center-block()
+              td
+                em.muted none
+              td
+                | Auto center a block-level element using
+                code margin: auto
+            tr
+              td
+                code .ie7-inline-block()
+              td
+                em.muted none
+              td
+                | Use in addition to regular
+                code display: inline-block
+                | to get IE7 support
+            tr
+              td
+                code .size()
+              td
+                code @height: 5px, @width: 5px
+              td Quickly set the height and width on one line
+            tr
+              td
+                code .square()
+              td
+                code @size: 5px
+              td
+                | Builds on
+                code .size()
+                | to set the width and height as same value
+            tr
+              td
+                code .opacity()
+              td
+                code @opacity: 100
+              td Set, in whole numbers, the opacity percentage (e.g., "50" or "75")
+        h3 Forms
+        table.table.table-bordered.table-striped
+          thead
+            tr
+              th.span4 Mixin
+              th Parameters
+              th Usage
+          tbody
+            tr
+              td
+                code .placeholder()
+              td
+                code @color: @placeholderText
+              td
+                | Set the
+                code placeholder
+                | text color for inputs
+        h3 Typography
+        table.table.table-bordered.table-striped
+          thead
+            tr
+              th.span4 Mixin
+              th Parameters
+              th Usage
+          tbody
+            tr
+              td
+                code
+                  #font
+                  #family
+                  .serif()
+              td
+                em.muted none
+              td Make an element use a serif font stack
+            tr
+              td
+                code
+                  #font
+                  #family
+                  .sans-serif()
+              td
+                em.muted none
+              td Make an element use a sans-serif font stack
+            tr
+              td
+                code
+                  #font
+                  #family
+                  .monospace()
+              td
+                em.muted none
+              td Make an element use a monospace font stack
+            tr
+              td
+                code
+                  #font
+                  .shorthand()
+              td
+                code @size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight
+              td Easily set font size, weight, and leading
+            tr
+              td
+                code
+                  #font
+                  .serif()
+              td
+                code @size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight
+              td Set font family to serif, and control size, weight, and leading
+            tr
+              td
+                code
+                  #font
+                  .sans-serif()
+              td
+                code @size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight
+              td Set font family to sans-serif, and control size, weight, and leading
+            tr
+              td
+                code
+                  #font
+                  .monospace()
+              td
+                code @size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight
+              td Set font family to monospace, and control size, weight, and leading
+        h3 Grid system
+        table.table.table-bordered.table-striped
+          thead
+            tr
+              th.span4 Mixin
+              th Parameters
+              th Usage
+          tbody
+            tr
+              td
+                code .container-fixed()
+              td
+                em.muted none
+              td Create a horizontally centered container for holding your content
+            tr
+              td
+                code
+                  #grid
+                  .core()
+              td
+                code @gridColumnWidth, @gridGutterWidth
+              td
+                | Generate a pixel grid system (container, row, and columns) with
+                em n
+                | columns and
+                em x
+                | pixel wide gutter
+            tr
+              td
+                code
+                  #grid
+                  .fluid()
+              td
+                code @fluidGridColumnWidth, @fluidGridGutterWidth
+              td
+                | Generate a precent grid system with
+                em n
+                | columns and
+                em x
+                | % wide gutter
+        h3 CSS3 properties
+        table.table.table-bordered.table-striped
+          thead
+            tr
+              th.span3 Mixin
+              th Parameters
+              th Usage
+          tbody
+            tr
+              td
+                code .border-radius()
+              td
+                code @radius: 5px
+              td
+                | Round the corners of an element. Can be a single value or four space-separated values
+            tr
+              td
+                code .box-shadow()
+              td
+                code @shadow: 0 1px 3px rgba(0,0,0,.25)
+              td Add a drop shadow to an element
+            tr
+              td
+                code .transition()
+              td
+                code @transition
+              td
+                | Add CSS3 transition effect (e.g.,
+                code all .2s linear
+                | )
+            tr
+              td
+                code .rotate()
+              td
+                code @degrees
+              td
+                | Rotate an element
+                em n
+                | degrees
+            tr
+              td
+                code .scale()
+              td
+                code @ratio
+              td
+                | Scale an element to
+                em n
+                | times its original size
+            tr
+              td
+                code .translate()
+              td
+                code @x: 0, @y: 0
+              td Move an element on the x and y planes
+            tr
+              td
+                code .background-clip()
+              td
+                code @clip
+              td
+                | Crop the background of an element (useful for
+                code border-radius
+                | )
+            tr
+              td
+                code .background-size()
+              td
+                code @size
+              td Control the size of background images via CSS3
+            tr
+              td
+                code .box-sizing()
+              td
+                code @boxmodel
+              td
+                | Change the box model for an element (e.g.,
+                code border-box
+                | for a full-width
+                code input
+                | )
+            tr
+              td
+                code .user-select()
+              td
+                code @select
+              td Control cursor selection of text on a page
+            tr
+              td
+                code .resizable()
+              td
+                code @direction: both
+              td Make any element resizable on the right and bottom
+            tr
+              td
+                code .content-columns()
+              td
+                code @columnCount, @columnGap: @gridColumnGutter
+              td Make the content of any element use CSS3 columns
+        h3 Backgrounds and gradients
+        table.table.table-bordered.table-striped
+          thead
+            tr
+              th.span4 Mixin
+              th Parameters
+              th Usage
+          tbody
+            tr
+              td
+                code
+                  #translucent
+                  .background()
+              td
+                code @color: @white, @alpha: 1
+              td Give an element a translucent background color
+            tr
+              td
+                code
+                  #translucent
+                  .border()
+              td
+                code @color: @white, @alpha: 1
+              td Give an element a translucent border color
+            tr
+              td
+                code
+                  #gradient
+                  .vertical()
+              td
+                code @startColor, @endColor
+              td Create a cross-browser vertical background gradient
+            tr
+              td
+                code
+                  #gradient
+                  .horizontal()
+              td
+                code @startColor, @endColor
+              td Create a cross-browser horizontal background gradient
+            tr
+              td
+                code
+                  #gradient
+                  .directional()
+              td
+                code @startColor, @endColor, @deg
+              td Create a cross-browser directional background gradient
+            tr
+              td
+                code
+                  #gradient
+                  .vertical-three-colors()
+              td
+                code @startColor, @midColor, @colorStop, @endColor
+              td Create a cross-browser three-color background gradient
+            tr
+              td
+                code
+                  #gradient
+                  .radial()
+              td
+                code @innerColor, @outerColor
+              td Create a cross-browser radial background gradient
+            tr
+              td
+                code
+                  #gradient
+                  .striped()
+              td
+                code @color, @angle
+              td Create a cross-browser striped background gradient
+            tr
+              td
+                code #gradientBar()
+              td
+                code @primaryColor, @secondaryColor
+              td Used for buttons to assign a gradient and slightly darker border
+      //
+         COMPILING LESS AND BOOTSTRAP
+        ================================================== 
+      section#compiling
+        .page-header
+          h1 Compiling Bootstrap with LESS
+        .alert.alert-info
+          strong Note:
+          | If you're submitting a pull request to GitHub with modified CSS, you
+          strong must
+          | recompile the CSS via any of these methods.
+        h2 Tools for compiling
+        .row
+          .span4
+            h3 Node with makefile
+            p
+              | Install the LESS command line compiler and uglify-js globally with npm by running the following command:
+            pre.
+              \n$ npm install -g less uglify-js              
+            p
+              | Once installed just run
+              code make
+              | from the root of your bootstrap directory and you're all set.
+            p
+              | Additionally, if you have
+              a(href='https://github.com/mynyml/watchr') watchr
+              | installed, you may run
+              code make watch
+              | to have bootstrap automatically rebuilt every time you edit a file in the bootstrap lib (this isn't required, just a convenience method).
+          //
+             /span4 
+          .span4
+            h3 Command line
+            p Install the LESS command line tool via Node and run the following command:
+            pre.
+              \n$ lessc ./lib/bootstrap.less                bootstrap.css              
+            p
+              | Be sure to include
+              code --compress
+              | in that command if you're trying to save some bytes!
+          //
+             /span4 
+          .span4
+            h3 Javascript
+            p
+              a(href='http://lesscss.org/') Download the latest Less.js
+              | and include the path to it (and Bootstrap) in the
+              code <head>
+              | .
+            pre.prettyprint.
+              \n<link rel="stylesheet/less" href="/path/to/bootstrap.less">
+              <script src="/path/to/less.js"></script>
+                            
+            p
+              | To recompile the .less files, just save them and reload your page. Less.js compiles them and stores them in local storage.
+          //
+             /span4 
+        //
+           /row 
+        .row
+          .span4
+            h3 Unofficial Mac app
+            p
+              a(href='http://incident57.com/less/') The unofficial Mac app
+              | watches directories of .less files and compiles the code to local files after every save of a watched .less file.
+            p
+              | If you like, you can toggle preferences in the app for automatic minifying and which directory the compiled files end up in.
+          //
+             /span4 
+          .span4
+            h3 More Mac apps
+            h4
+              a(href='http://crunchapp.net/', target='_blank') Crunch
+            p Crunch is a great looking LESS editor and compiler built on Adobe Air.
+            h4
+              a(href='http://incident57.com/codekit/', target='_blank') CodeKit
+            p
+              | Created by the same guy as the unofficial Mac app, CodeKit is a Mac app that compiles LESS, SASS, Stylus, and CoffeeScript.
+            h4
+              a(href='http://wearekiss.com/simpless', target='_blank') Simpless
+            p
+              | Mac, Linux, and PC app for drag and drop compiling of LESS files. Plus, the
+              a(href='https://github.com/Paratron/SimpLESS', target='_blank') source code is on GitHub
+              | .
+          //
+             /span4 
+        //
+           /row 
+      //
+         Footer
+              ================================================== 
+      footer.footer
+        p.pull-right
+          a(href='#') Back to top
+        p
+          | Designed and built with all the love in the world
+          a(href='http://twitter.com/twitter', target='_blank') @twitter
+          | by
+          a(href='http://twitter.com/mdo', target='_blank') @mdo
+          | and
+          a(href='http://twitter.com/fat', target='_blank') @fat
+          | .
+        p
+          | Code licensed under the
+          a(href='http://www.apache.org/licenses/LICENSE-2.0', target='_blank') Apache License v2.0
+          | . Documentation licensed under
+          a(href='http://creativecommons.org/licenses/by/3.0/') CC BY 3.0
+          | .
+        p
+          | Icons from
+          a(href='http://glyphicons.com') Glyphicons Free
+          | , licensed under
+          a(href='http://creativecommons.org/licenses/by/3.0/') CC BY 3.0
+          | .
+    //
+       /container 
+    //
+       Le javascript
+          ================================================== 
+    //
+       Placed at the end of the document so the pages load faster 
+    script(type='text/javascript', src='http://platform.twitter.com/widgets.js')
+    script(src='assets/js/jquery.js')
+    script(src='assets/js/google-code-prettify/prettify.js')
+    script(src='assets/js/bootstrap-transition.js')
+    script(src='assets/js/bootstrap-alert.js')
+    script(src='assets/js/bootstrap-modal.js')
+    script(src='assets/js/bootstrap-dropdown.js')
+    script(src='assets/js/bootstrap-scrollspy.js')
+    script(src='assets/js/bootstrap-tab.js')
+    script(src='assets/js/bootstrap-tooltip.js')
+    script(src='assets/js/bootstrap-popover.js')
+    script(src='assets/js/bootstrap-button.js')
+    script(src='assets/js/bootstrap-collapse.js')
+    script(src='assets/js/bootstrap-carousel.js')
+    script(src='assets/js/bootstrap-typeahead.js')
+    script(src='assets/js/application.js')
+  script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')

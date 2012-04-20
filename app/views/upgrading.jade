@@ -1,0 +1,454 @@
+!!! 5
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Upgrading · Twitter Bootstrap
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    //
+       Le styles 
+    link(href='assets/css/bootstrap.css', rel='stylesheet')
+    link(href='assets/css/bootstrap-responsive.css', rel='stylesheet')
+    link(href='assets/css/docs.css', rel='stylesheet')
+    link(href='assets/js/google-code-prettify/prettify.css', rel='stylesheet')
+    //
+       Le HTML5 shim, for IE6-8 support of HTML5 elements 
+    //if lt IE 9
+    //
+       Le fav and touch icons 
+    link(rel='shortcut icon', href='assets/ico/favicon.ico')
+    link(rel='apple-touch-icon-precomposed', sizes='114x114', href='assets/ico/apple-touch-icon-114-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', sizes='72x72', href='assets/ico/apple-touch-icon-72-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', href='assets/ico/apple-touch-icon-57-precomposed.png')
+  body(data-spy='scroll', data-target='.subnav', data-offset='50')
+    //
+       Navbar
+          ================================================== 
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand(href='./index.html') Bootstrap
+          .nav-collapse
+            ul.nav
+              li.
+                a(href='./index.html') Overview
+              li.
+                a(href='./scaffolding.html') Scaffolding
+              li.
+                a(href='./base-css.html') Base CSS
+              li.
+                a(href='./components.html') Components
+              li.
+                a(href='./javascript.html') Javascript plugins
+              li.
+                a(href='./less.html') Using LESS
+              li.divider-vertical
+              li.
+                a(href='./download.html') Customize
+              li.
+                a(href='./examples.html') Examples
+    .container
+      //
+         Masthead
+        ================================================== 
+      header#overview.jumbotron.subhead
+        h1 Upgrading to Bootstrap 2
+        p.lead Learn about significant changes and additions since v1.4 with this handy guide.
+      //
+         Project
+        ================================================== 
+      section#docs
+        .page-header
+          h1 Project changes
+        ul
+          li
+            | Docs: major updates across the board to general structure, examples, and code snippets. Also made responsive with new media queries.
+          li
+            | Docs: all docs pages are now powered by Mustache templates and strings are wrapped in i18n tags for translation by the Twitter Translation Center. All changes to documentation must be done here and then compiled (similar to our CSS and LESS).
+          li
+            | Repo directory structure: removed the compiled CSS from the root in favor of a large direct download link on the docs homepage. Compiled CSS is in
+            code /docs/assets/css/
+            | .
+          li
+            | Docs and repo: one makefile, just type
+            code make
+            | in the Terminal and get updated docs and CSS.
+      //
+         Scaffolding
+        ================================================== 
+      section#scaffolding
+        .page-header
+          h1 Scaffolding
+        h3 Grid system
+        ul
+          li
+            | Updated grid system, now only 12 columns instead of 16
+            li
+              | Responsive approach means your projects virtually work out of the box on smartphones, tablets, and more
+            li Removed unused (by default) grid columns support for 17-24 columns
+        h3 Responsive (media queries)
+        ul
+          li
+            | Media queries added for
+            strong basic support
+            | across mobile and tablet devices
+            li Responsive CSS is compiled separately, as bootstrap-responsive.css
+      //
+         Base CSS
+        ================================================== 
+      section#baseCSS
+        .page-header
+          h1 Base CSS
+        h3 Typography
+        ul
+          li
+            code h4
+            | elements were dropped from 16px to 14px with a default
+            code line-height
+            | of 18px
+          li
+            code h5
+            | elements were dropped from 14px to 12px
+          li
+            code h6
+            | elements were dropped from 13px to 11px
+          li
+            | Right-aligned option for blockquotes if
+            code float: right;
+        h3 Code
+        ul
+          li
+            | New graphical style for
+            code <code>
+          li Google Code Prettify styles updated (based on GitHub's gists)
+        h3 Tables
+        ul
+          li
+            | Improved support for
+            code colspan
+            | and
+            code rowspan
+          li
+            | Styles now restricted to new base class,
+            code .table
+          li
+            | Table classes standardized with
+            code .table-
+            | required as a prefix
+          li Removed unused table color options (too much code for such little impact)
+          li Dropped support for TableSorter
+        h3 Buttons
+        ul
+          li
+            | New classes for colors and sizes, all prefixed with
+            code .btn-
+          li IE9: removed gradients and added rounded corners
+          li
+            | Updated active state to make styling clearer in button groups (new) and look better with custom transition
+          li
+            | New mixin,
+            code .buttonBackground
+            | , to set button gradients
+          li
+            | The
+            code .secondary
+            | class was removed from modal examples in our docs as it never had associated styles.
+        h3 Forms
+        ul
+          li
+            | Default form style is now vertical (stacked) to use less CSS and add greater flexibility
+          li
+            | Form classes standardized with
+            code .form-
+            | required as a prefix
+          li New built-in form defaults for search, inline, and horizontal forms
+          li
+            | For horizontal forms, previous classes
+            code .clearfix
+            | and
+            code .input
+            | are equivalent to the new
+            code .control-group
+            | and
+            code .controls
+            | .
+          li
+            | More flexible horizontal form markup with classes for all styling, including new optional class for the
+            code label
+          li Form states: colors updated and customizable via new LESS variables
+        h3 Icons, by Glyphicons
+        ul
+          li New Glyphicons Halflings icon set added in sprite form, in black and white
+          li
+            | Simple markup required for an icon in tons of contexts:
+            code <i class="icon-cog"></>
+          li
+            | Add another class,
+            code .icon-white
+            | , for white variation of the same icon
+      //
+         Components
+        ================================================== 
+      section#components
+        .page-header
+          h1 Components
+        h3 Button groups and dropdowns
+        ul
+          li Two brand new components in 2.0: button groups and button dropdowns
+          li
+            | Dependency: button dropdowns are built on button groups, and therefore require all their styles
+          li
+            | Button groups,
+            code .btn-group
+            | , can be grouped one level higher with a button toolbar,
+            code .btn-toolbar
+        h3 Navigation
+        ul
+          li
+            | Tabs and pills now require the use of a new base class,
+            code .nav
+            | , on their
+            code <ul>
+            | and the class names are now
+            code .nav-pills
+            | and
+            code .nav-tabs
+            | .
+          li
+            | New nav list variation added that uses the same base class,
+            code .nav
+          li
+            | Vertical tabs and pills have been added—just add
+            code .nav-stacked
+            | to the
+            code <ul>
+          li Pills were restyled to be less rounded by default
+          li
+            | Pills now have dropdown menu support (they share the same markup and styles as tabs)
+        h3 Navbar (formerly topbar)
+        ul
+          li
+            | Base class changed from
+            code .topbar
+            | to
+            code .navbar
+          li
+            | Now supports static position (default behavior, not fixed) and fixed to the top of viewport via
+            code .navbar-fixed-top
+            | (previously only supported fixed)
+          li Added vertical dividers to top-level nav
+          li
+            | Improved support for inline forms in the navbar, which now require
+            code .navbar-form
+            | to properly scope styles to only the intended forms.
+          li
+            | Navbar search form now requires use of the
+            code .navbar-search
+            | class and its input the use of
+            code .search-query
+            | . To position the search form, you
+            strong must
+            | use
+            code .pull-left
+            | or
+            code .pull-right
+            | .
+          li
+            | Added optional responsive markup for collapsing navbar contents for smaller resolutions and devices.
+            a(href='./components.html#navbar') See navbar docs
+            | for how to utilize.
+        h3 Dropdown menus
+        ul
+          li
+            | Updated the
+            code .dropdown-menu
+            | to tighten up spacing
+          li
+            | Now requires you to add a
+            code <span class="caret"></span>
+            | to show the dropdown arrow
+          li
+            | Now requires you to add a
+            code data-toggle="dropdown"
+            | attribute to obtain toggling behavior
+          li
+            | The navbar (fixed topbar) has brand new dropdowns. Gone are the dark versions and in their place are the standard white ones with an additional caret at their tops for clarity of position.
+        h3 Labels
+        ul
+          li Label colors updated to match form state colors
+          li
+            | Not only do they match graphically, but they are powered by the same new variables
+        h3 Thumbnails
+        ul
+          li
+            | Formerly
+            code .media-grid
+            | , now just
+            code .thumbnails
+            | , we've thoroughly extended this component for more uses while maintaining overall simplicity out of the box.
+          li
+            | Individual thumbnails now require
+            code .thumbnail
+            | class
+        h3 Alerts
+        ul
+          li
+            | New base class:
+            code .alert
+            | instead of
+            code .alert-message
+          li
+            | Class names standardized for other options, now all starting with
+            code .alert-
+          li
+            | Redesigned base alert styles to combine the default alerts and block-level alerts into one
+          li
+            | Block level alert class changed:
+            code .alert-block
+            | instead of
+            code .block-message
+        h3 Progress bars
+        ul
+          li New in 2.0
+          li
+            | Features multiple styles via classes, including striped and animated variations via CSS3
+        h3 Miscellaneous components
+        ul
+          li
+            | Added documentation for the well component and the close icon (used in modals and alerts)
+      //
+         Javascript
+        ================================================== 
+      section#javascript
+        .page-header
+          h1 Javascript plugins
+        .alert.alert-info
+          strong Heads up!
+          | We've rewritten just about everything for our plugins, so head on over to
+          a(href='./javascript.html') the Javascript page
+          | to learn more.
+        h3 Tooltips
+        ul
+          li
+            | The plugin method has been renamed from
+            code twipsy()
+            | to
+            code tooltip()
+            | , and the class name changed from
+            code twipsy
+            | to
+            code tooltip
+            | .
+          li
+            | The
+            code placement
+            | option value that was
+            code below
+            | is now
+            code bottom
+            | , and
+            code above
+            | is now
+            code top
+            | .
+          li
+            | The
+            code animate
+            | option was renamed to
+            code animation
+            | .
+          li
+            | The
+            code html
+            | option was removed, as the tooltips default to allowing HTML now.
+        h3 Popovers
+        ul
+          li
+            | Child elements now properly namespaced:
+            code .title
+            | to
+            code .popover-title
+            | ,
+            code .inner
+            | to
+            code .popover-inner
+            | , and
+            code .content
+            | to
+            code .popover-content
+            | .
+          li
+            | The
+            code placement
+            | option value that was
+            code below
+            | is now
+            code bottom
+            | , and
+            code above
+            | is now
+            code top
+            | .
+        h3 New plugins
+        ul
+          li
+            a(href='./javascript.html#collapse') Collapse
+          li
+            a(href='./javascript.html#carousel') Carousel
+          li
+            a(href='./javascript.html#typeahead') Typeahead
+      //
+         Footer
+              ================================================== 
+      footer.footer
+        p.pull-right
+          a(href='#') Back to top
+        p
+          | Designed and built with all the love in the world
+          a(href='http://twitter.com/twitter', target='_blank') @twitter
+          | by
+          a(href='http://twitter.com/mdo', target='_blank') @mdo
+          | and
+          a(href='http://twitter.com/fat', target='_blank') @fat
+          | .
+        p
+          | Code licensed under the
+          a(href='http://www.apache.org/licenses/LICENSE-2.0', target='_blank') Apache License v2.0
+          | . Documentation licensed under
+          a(href='http://creativecommons.org/licenses/by/3.0/') CC BY 3.0
+          | .
+        p
+          | Icons from
+          a(href='http://glyphicons.com') Glyphicons Free
+          | , licensed under
+          a(href='http://creativecommons.org/licenses/by/3.0/') CC BY 3.0
+          | .
+    //
+       /container 
+    //
+       Le javascript
+          ================================================== 
+    //
+       Placed at the end of the document so the pages load faster 
+    script(type='text/javascript', src='http://platform.twitter.com/widgets.js')
+    script(src='assets/js/jquery.js')
+    script(src='assets/js/google-code-prettify/prettify.js')
+    script(src='assets/js/bootstrap-transition.js')
+    script(src='assets/js/bootstrap-alert.js')
+    script(src='assets/js/bootstrap-modal.js')
+    script(src='assets/js/bootstrap-dropdown.js')
+    script(src='assets/js/bootstrap-scrollspy.js')
+    script(src='assets/js/bootstrap-tab.js')
+    script(src='assets/js/bootstrap-tooltip.js')
+    script(src='assets/js/bootstrap-popover.js')
+    script(src='assets/js/bootstrap-button.js')
+    script(src='assets/js/bootstrap-collapse.js')
+    script(src='assets/js/bootstrap-carousel.js')
+    script(src='assets/js/bootstrap-typeahead.js')
+    script(src='assets/js/application.js')
+  script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')

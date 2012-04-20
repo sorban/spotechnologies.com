@@ -13,7 +13,7 @@ var app = module.exports = express.createServer();
 app.configure(function(){
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
-  app.set('view options', {layout : false});
+  app.set('view options', {layout : true});
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.cookieParser());
@@ -33,6 +33,10 @@ app.configure('production', function(){
 // Routes
 
 app.get('/', routes.index);
+app.get('/sportsStandings', routes.sportsStandings);
+app.get('/about', routes.about);
+app.get('/contact', routes.contact);
+app.get('/bootstrapIndex', routes.bootstrapIndex);
 
 app.listen(8080, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

@@ -1,0 +1,743 @@
+!!! 5
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Scaffolding · Twitter Bootstrap
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    //
+       Le styles 
+    link(href='assets/css/bootstrap.css', rel='stylesheet')
+    link(href='assets/css/bootstrap-responsive.css', rel='stylesheet')
+    link(href='assets/css/docs.css', rel='stylesheet')
+    link(href='assets/js/google-code-prettify/prettify.css', rel='stylesheet')
+    //
+       Le HTML5 shim, for IE6-8 support of HTML5 elements 
+    //if lt IE 9
+    //
+       Le fav and touch icons 
+    link(rel='shortcut icon', href='assets/ico/favicon.ico')
+    link(rel='apple-touch-icon-precomposed', sizes='114x114', href='assets/ico/apple-touch-icon-114-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', sizes='72x72', href='assets/ico/apple-touch-icon-72-precomposed.png')
+    link(rel='apple-touch-icon-precomposed', href='assets/ico/apple-touch-icon-57-precomposed.png')
+  body(data-spy='scroll', data-target='.subnav', data-offset='50')
+    //
+       Navbar
+          ================================================== 
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand(href='./index.html') Bootstrap
+          .nav-collapse
+            ul.nav
+              li.
+                a(href='./index.html') Overview
+              li.active
+                a(href='./scaffolding.html') Scaffolding
+              li.
+                a(href='./base-css.html') Base CSS
+              li.
+                a(href='./components.html') Components
+              li.
+                a(href='./javascript.html') Javascript plugins
+              li.
+                a(href='./less.html') Using LESS
+              li.divider-vertical
+              li.
+                a(href='./download.html') Customize
+              li.
+                a(href='./examples.html') Examples
+    .container
+      //
+         Masthead
+              ================================================== 
+      header#overview.jumbotron.subhead
+        h1 Scaffolding
+        p.lead
+          | Bootstrap is built on a responsive 12-column grid. We've also included fixed- and fluid-width layouts based on that system.
+        .subnav
+          ul.nav.nav-pills
+            li
+              a(href='#global') Global styles
+            li
+              a(href='#gridSystem') Grid system
+            li
+              a(href='#fluidGridSystem') Fluid grid system
+            li
+              a(href='#gridCustomization') Customizing
+            li
+              a(href='#layouts') Layouts
+            li
+              a(href='#responsive') Responsive design
+      //
+         Global Bootstrap settings
+        ================================================== 
+      section#global
+        .page-header
+          h1
+            | Global styles
+            small for CSS reset, typography, and links
+        .row
+          .span4
+            h2 Requires HTML5 doctype
+            p
+              | Bootstrap makes use of HTML elements and CSS properties that require the use of the HTML5 doctype. Be sure to include it at the beginning of every Bootstrapped page in your project.
+            pre.prettyprint.linenums.
+              \n<!DOCTYPE html>
+              <html lang="en">
+                ...
+              </html>
+                            
+          //
+             /.span 
+          .span4
+            h2 Typography and links
+            p
+              | Within the
+              strong scaffolding.less
+              | file, we set basic global display, typography, and link styles. Specifically, we:
+            ul
+              li Remove margin on the body
+              li
+                | Set
+                code background-color: white;
+                | on the
+                code body
+              li
+                | Use the
+                code @baseFontFamily
+                | ,
+                code @baseFontSize
+                | , and
+                code @baseLineHeight
+                | attributes as our typographyic base
+              li
+                | Set the global link color via
+                code @linkColor
+                | and apply link underlines only on
+                code :hover
+          //
+             /.span 
+          .span4
+            h2 Reset via Normalize
+            p
+              | As of Bootstrap 2, the traditional CSS reset has evolved to make use of elements from
+              a(href='http://necolas.github.com/normalize.css/', target='_blank') Normalize.css
+              | , a project by
+              a(href='http://twitter.com/necolas', target='_blank') Nicolas Gallagher
+              | that also powers the
+              a(href='http://html5boilerplate.com', target='_blank') HTML5 Boilerplate
+              | .
+            p
+              | The new reset can still be found in
+              strong reset.less
+              | , but with many elements removed for brevity and accuracy.
+          //
+             /.span 
+        //
+           /.row 
+      //
+         Grid system
+        ================================================== 
+      section#gridSystem
+        .page-header
+          h1
+            | Default grid system
+            small 12 columns with a responsive twist
+        .row.show-grid
+          .span1 1
+          .span1 1
+          .span1 1
+          .span1 1
+          .span1 1
+          .span1 1
+          .span1 1
+          .span1 1
+          .span1 1
+          .span1 1
+          .span1 1
+          .span1 1
+        .row.show-grid
+          .span4 4
+          .span4 4
+          .span4 4
+        .row.show-grid
+          .span4 4
+          .span8 8
+        .row.show-grid
+          .span6 6
+          .span6 6
+        .row.show-grid
+          .span12 12
+        .row
+          .span4
+            p
+              | The default grid system provided as part of Bootstrap is a
+              strong 940px-wide, 12-column grid
+              | .
+            p
+              | It also has four responsive variations for various devices and resolutions: phone, tablet portrait, table landscape and small desktops, and large widescreen desktops.
+          //
+             /.span 
+          .span4
+            pre.prettyprint.linenums.
+              \n<div class="row">
+                <div class="span4">...</div>
+                <div class="span8">...</div>
+              </div>
+                            
+          //
+             /.span 
+          .span4
+            p
+              | As shown here, a basic layout can be created with two "columns," each spanning a number of the 12 foundational columns we defined as part of our grid system.
+          //
+             /.span 
+        //
+           /.row 
+        br
+        h2 Offsetting columns
+        .row.show-grid
+          .span4 4
+          .span4.offset4 4 offset 4
+        //
+           /row 
+        .row.show-grid
+          .span3.offset3 3 offset 3
+          .span3.offset3 3 offset 3
+        //
+           /row 
+        .row.show-grid
+          .span8.offset4 8 offset 4
+        //
+           /row 
+        pre.prettyprint.linenums.
+          \n<div class="row">
+            <div class="span4">...</div>
+            <div class="span4 offset4">...</div>
+          </div>
+                    
+        br
+        h2 Nesting columns
+        .row
+          .span6
+            p
+              | With the static (non-fluid) grid system in Bootstrap, nesting is easy. To nest your content, just add a new
+              code .row
+              | and set of
+              code .span*
+              | columns within an existing
+              code .span*
+              | column.
+            h3 Example
+            p
+              | Nested rows should include a set of columns that add up to the number of columns of it's parent. For example, two nested
+              code .span3
+              | columns should be placed within a
+              code .span6
+              | .
+            .row.show-grid
+              .span6
+                | Level 1 of column
+                .row.show-grid
+                  .span3
+                    | Level 2
+                  .span3
+                    | Level 2
+          //
+             /.span 
+          .span6
+            pre.prettyprint.linenums.
+              \n<div class="row">
+                <div class="span12">
+                  Level 1 of column
+                  <div class="row">
+                    <div class="span6">Level 2</div>
+                    <div class="span6">Level 2</div>
+                  </div>
+                </div>
+              </div>
+                            
+          //
+             /.span 
+        //
+           /.row 
+      //
+         Fluid grid system
+        ================================================== 
+      section#fluidGridSystem
+        .page-header
+          h1
+            | Fluid grid system
+            small 12 responsive, percent-based columns
+        h2 Fluid columns
+        .row-fluid.show-grid
+          .span1 1
+          .span1 1
+          .span1 1
+          .span1 1
+          .span1 1
+          .span1 1
+          .span1 1
+          .span1 1
+          .span1 1
+          .span1 1
+          .span1 1
+          .span1 1
+        .row-fluid.show-grid
+          .span4 4
+          .span4 4
+          .span4 4
+        .row-fluid.show-grid
+          .span4 4
+          .span8 8
+        .row-fluid.show-grid
+          .span6 6
+          .span6 6
+        .row-fluid.show-grid
+          .span12 12
+        .row
+          .span4
+            h3 Percents, not pixels
+            p
+              | The fluid grid system uses percents for column widths instead of fixed pixels. It also has the same responsive variations as our fixed grid system, ensuring proper proportions for key screen resolutions and devices.
+          //
+             /.span 
+          .span4
+            h3 Fluid rows
+            p
+              | Make any row fluid simply by changing
+              code .row
+              | to
+              code .row-fluid
+              | . The columns stay the exact same, making it super straightforward to flip between fixed and fluid layouts.
+          //
+             /.span 
+          .span4
+            h3 Markup
+            pre.prettyprint.linenums.
+              \n<div class="row-fluid">
+                <div class="span4">...</div>
+                <div class="span8">...</div>
+              </div>
+                            
+          //
+             /.span 
+        //
+           /.row 
+        h2 Fluid nesting
+        .row
+          .span6
+            p
+              | Nesting with fluid grids is a bit different: the number of nested columns doesn't need to match the parent. Instead, your columns are reset at each level because each row takes up 100% of the parent column.
+            .row-fluid.show-grid
+              .span12
+                | Fluid 12
+                .row-fluid.show-grid
+                  .span6
+                    | Fluid 6
+                  .span6
+                    | Fluid 6
+          //
+             /.span 
+          .span6
+            pre.prettyprint.linenums.
+              \n<div class="row-fluid">
+                <div class="span12">
+                  Level 1 of column
+                  <div class="row-fluid">
+                    <div class="span6">Level 2</div>
+                    <div class="span6">Level 2</div>
+                  </div>
+                </div>
+              </div>
+                            
+          //
+             /.span 
+        //
+           /.row 
+      //
+         Customizaton
+        ================================================== 
+      section#gridCustomization
+        .page-header
+          h1 Grid customization
+        table.table.table-bordered.table-striped
+          thead
+            tr
+              th Variable
+              th Default value
+              th Description
+          tbody
+            tr
+              td
+                code @gridColumns
+              td 12
+              td Number of columns
+            tr
+              td
+                code @gridColumnWidth
+              td 60px
+              td Width of each column
+            tr
+              td
+                code @gridGutterWidth
+              td 20px
+              td Negative space between columns
+            tr
+              td
+                code @siteWidth
+              td
+                em Computed sum of all columns and gutters
+              td
+                | Counts number of columns and gutters to set width of the
+                code .container-fixed()
+                | mixin
+        .row
+          .span4
+            h3 Variables in LESS
+            p
+              | Built into Bootstrap are a handful of variables for customizing the default 940px grid system, documented above. All variables for the grid are stored in variables.less.
+          //
+             /.span 
+          .span4
+            h3 How to customize
+            p
+              | Modifying the grid means changing the three
+              code @grid*
+              | variables and recompiling Bootstrap. Change the grid variables in variables.less and use one of the
+              a(href='less.html#compiling') four ways documented to recompile
+              | . If you're adding more columns, be sure to add the CSS for those in grid.less.
+          //
+             /.span 
+          .span4
+            h3 Staying responsive
+            p
+              | Customization of the grid only works at the default level, the 940px grid. To maintain the responsive aspects of Bootstrap, you'll also have to customize the grids in responsive.less.
+          //
+             /.span 
+        //
+           /.row 
+      //
+         Layouts (Default and fluid)
+        ================================================== 
+      section#layouts
+        .page-header
+          h1
+            | Layouts
+            small Basic templates to create webpages
+        .row
+          .span6
+            h2 Fixed layout
+            p
+              | The default and simple 940px-wide, centered layout for just about any website or page provided by a single
+              code <div class="container">
+              | .
+            .mini-layout
+              .mini-layout-body
+            pre.prettyprint.linenums.
+              \n<body>
+                <div class="container">
+                  ...
+                </div>
+              </body>
+                            
+          //
+             /.span 
+          .span6
+            h2 Fluid layout
+            p
+              code <div class="container-fluid">
+              | gives flexible page structure, min- and max-widths, and a left-hand sidebar. It's great for apps and docs.
+            .mini-layout.fluid
+              .mini-layout-sidebar
+              .mini-layout-body
+            pre.prettyprint.linenums.
+              \n<div class="container-fluid">
+                <div class="row-fluid">
+                  <div class="span2">
+                    <!--Sidebar content-->
+                  </div>
+                  <div class="span10">
+                    <!--Body content-->
+                  </div>
+                </div>
+              </div>
+                            
+          //
+             /.span 
+        //
+           /.row 
+      //
+         Responsive design
+        ================================================== 
+      section#responsive
+        .page-header
+          h1
+            | Responsive design
+            small Media queries for various devices and resolutions
+        //
+           Supported devices 
+        .row
+          .span4
+            p
+              img(src='assets/img/responsive-illustrations.png', alt='Responsive devices')
+            h3 What they do
+            p
+              | Media queries allow for custom CSS based on a number of conditions—ratios, widths, display type, etc—but usually focuses around
+              code min-width
+              | and
+              code max-width
+              | .
+            ul
+              li Modify the width of column in our grid
+              li Stack elements instead of float wherever necessary
+              li Resize headings and text to be more appropriate for devices
+            p
+              | Use media queries responsibly and only as a start to your mobile audiences. For larger projects, do consider dedicated code bases and not layers of media queries.
+          //
+             /.span 
+          .span8
+            h2 Supported devices
+            p
+              | Bootstrap supports a handful of media queries in a single file to help make your projects more appropriate on different devices and screen resolutions. Here's what's included:
+            table.table.table-bordered.table-striped
+              thead
+                tr
+                  th Label
+                  th Layout width
+                  th Column width
+                  th Gutter width
+              tbody
+                tr
+                  td Smartphones
+                  td 480px and below
+                  td.muted(colspan='2') Fluid columns, no fixed widths
+                tr
+                  td Smartphones to tablets
+                  td 767px and below
+                  td.muted(colspan='2') Fluid columns, no fixed widths
+                tr
+                  td Portrait tablets
+                  td 768px and above
+                  td 42px
+                  td 20px
+                tr
+                  td Default
+                  td 980px and up
+                  td 60px
+                  td 20px
+                tr
+                  td Large display
+                  td 1200px and up
+                  td 70px
+                  td 30px
+            h3 Requires meta tag
+            p
+              | To ensure devices display responsive pages properly, include the viewport meta tag.
+            pre.prettyprint.linenums.
+              \n<meta name="viewport" content="width=device-width, initial-scale=1.0">              
+          //
+             /.span 
+        //
+           /.row 
+        br
+        //
+           Media query code 
+        h2 Using the media queries
+        .row
+          .span4
+            p
+              | Bootstrap doesn't automatically include these media queries, but understanding and adding them is very easy and requires minimal setup. You have a few options for including the responsive features of Bootstrap:
+            ol
+              li Use the compiled responsive version, bootstrap-responsive.css
+              li Add @import "responsive.less" and recompile Bootstrap
+              li Modify and recompile responsive.less as a separate file
+            p
+              strong Why not just include it?
+              | Truth be told, not everything needs to be responsive. Instead of encouraging developers to remove this feature, we figure it best to enable it.
+          //
+             /.span 
+          .span8
+            pre.prettyprint.linenums.
+              \n  // Landscape phones and down
+                @media (max-width: 480px) { ... }
+              
+                // Landscape phone to portrait tablet
+                @media (max-width: 768px) { ... }
+              
+                // Portrait tablet to landscape and desktop
+                @media (min-width: 768px) and (max-width: 980px) { ... }
+              
+                // Large desktop
+                @media (min-width: 1200px) { .. }
+                            
+          //
+             /.span 
+        //
+           /.row 
+        br
+        //
+           Responsive utility classes 
+        h2 Responsive utility classes
+        .row
+          .span4
+            h3
+              | What are they
+              p
+                | For faster mobile-friendly development, use these basic utility classes for showing and hidding content by device.
+              h3
+                | When to use
+                p
+                  | Use on a limited basis and avoid creating entirely different versions of the same site. Instead, use them to complement each device's presentation.
+                p
+                  | For example, you might show a
+                  code <select>
+                  | element for nav on mobile layouts, but not on tablets or desktops.
+          //
+             /.span 
+          .span8
+            h3 Support classes
+            p
+              | Shown here is a table of the classes we support and their effect on a given media query layout (labeled by device). They can be found in
+              code responsive.less
+              | .
+            table.table.table-bordered.table-striped.responsive-utilities
+              thead
+                tr
+                  th Class
+                  th
+                    | Phones
+                    small 480px and below
+                  th
+                    | Tablets
+                    small 767px and below
+                  th
+                    | Desktops
+                    small 768px and above
+              tbody
+                tr
+                  th
+                    code .visible-phone
+                  td.is-visible Visible
+                  td.is-hidden Hidden
+                  td.is-hidden Hidden
+                tr
+                  th
+                    code .visible-tablet
+                  td.is-hidden Hidden
+                  td.is-visible Visible
+                  td.is-hidden Hidden
+                tr
+                  th
+                    code .visible-desktop
+                  td.is-hidden Hidden
+                  td.is-hidden Hidden
+                  td.is-visible Visible
+                tr
+                  th
+                    code .hidden-phone
+                  td.is-hidden Hidden
+                  td.is-visible Visible
+                  td.is-visible Visible
+                tr
+                  th
+                    code .hidden-tablet
+                  td.is-visible Visible
+                  td.is-hidden Hidden
+                  td.is-visible Visible
+                tr
+                  th
+                    code .hidden-desktop
+                  td.is-visible Visible
+                  td.is-visible Visible
+                  td.is-hidden Hidden
+            h3 Test case
+            p Resize your browser or load on different devices to test the above clases.
+            h4 Visible on...
+            ul.responsive-utilities-test
+              li
+                | Phone
+                span.visible-phone ✔ Phone
+              li
+                | Tablet
+                span.visible-tablet ✔ Tablet
+              li
+                | Desktop
+                span.visible-desktop ✔ Desktop
+            h4 Hidden on...
+            ul.responsive-utilities-test.hidden-on
+              li
+                | Phone
+                span.hidden-phone ✔ Phone
+              li
+                | Tablet
+                span.hidden-tablet ✔ Tablet
+              li
+                | Desktop
+                span.hidden-desktop ✔ Desktop
+          //
+             /.span 
+        //
+           /.row 
+        .row
+          .span4
+          //
+             /.span 
+        //
+           /.row 
+      //
+         Footer
+              ================================================== 
+      footer.footer
+        p.pull-right
+          a(href='#') Back to top
+        p
+          | Designed and built with all the love in the world
+          a(href='http://twitter.com/twitter', target='_blank') @twitter
+          | by
+          a(href='http://twitter.com/mdo', target='_blank') @mdo
+          | and
+          a(href='http://twitter.com/fat', target='_blank') @fat
+          | .
+        p
+          | Code licensed under the
+          a(href='http://www.apache.org/licenses/LICENSE-2.0', target='_blank') Apache License v2.0
+          | . Documentation licensed under
+          a(href='http://creativecommons.org/licenses/by/3.0/') CC BY 3.0
+          | .
+        p
+          | Icons from
+          a(href='http://glyphicons.com') Glyphicons Free
+          | , licensed under
+          a(href='http://creativecommons.org/licenses/by/3.0/') CC BY 3.0
+          | .
+    //
+       /container 
+    //
+       Le javascript
+          ================================================== 
+    //
+       Placed at the end of the document so the pages load faster 
+    script(type='text/javascript', src='http://platform.twitter.com/widgets.js')
+    script(src='assets/js/jquery.js')
+    script(src='assets/js/google-code-prettify/prettify.js')
+    script(src='assets/js/bootstrap-transition.js')
+    script(src='assets/js/bootstrap-alert.js')
+    script(src='assets/js/bootstrap-modal.js')
+    script(src='assets/js/bootstrap-dropdown.js')
+    script(src='assets/js/bootstrap-scrollspy.js')
+    script(src='assets/js/bootstrap-tab.js')
+    script(src='assets/js/bootstrap-tooltip.js')
+    script(src='assets/js/bootstrap-popover.js')
+    script(src='assets/js/bootstrap-button.js')
+    script(src='assets/js/bootstrap-collapse.js')
+    script(src='assets/js/bootstrap-carousel.js')
+    script(src='assets/js/bootstrap-typeahead.js')
+    script(src='assets/js/application.js')
+  script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
