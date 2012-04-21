@@ -22,6 +22,7 @@ html(lang='en')
     link(rel='apple-touch-icon-precomposed', sizes='72x72', href='assets/ico/apple-touch-icon-72-precomposed.png')
     link(rel='apple-touch-icon-precomposed', href='assets/ico/apple-touch-icon-57-precomposed.png')
   body(data-spy='scroll', data-target='.subnav', data-offset='50')
+    include topbar
     //
        Navbar
           ////================================================== 
@@ -32,26 +33,27 @@ html(lang='en')
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.brand(href='./index.html') Bootstrap
+          a.brand(href='/bootstrapIndex') Bootstrap
           .nav-collapse
             ul.nav
               li.active
-                a(href='./index.html') Overview
-              li.
+                a(href='/bootstrapIndex') Overview
+              li.span1
                 a(href='/scaffolding') Scaffolding
-              li.
-                a(href='./base-css.html') Base CSS
-              li.
-                a(href='./components.html') Components
-              li.
-                a(href='./javascript.html') Javascript plugins
-              li.
-                a(href='./less.html') Using LESS
+              li.span2
+                a(href='/base-css') Base CSS
+              li.span1
+                a(href='/components') Components
+              li.span2
+                a(href='/javascript') Javascript plugins
+              li.span1
+                a(href='/less') Using LESS
               li.divider-vertical
-              li.
-                a(href='./download.html') Customize
-              li.
-                a(href='./examples.html') Examples
+              li.span2
+                a(href='/download') Customize
+              li.span1
+                a(href='/examples') Examples
+
     .container
       //
          Masthead

@@ -4,9 +4,13 @@
  */
 
 var express = require('express')
-  , routes = require('./routes');
+  , routes  = require('./routes')
+  , util    = require('util')
+  , mongoose = require('mongoose');
 
 var app = module.exports = express.createServer();
+
+mongoose.connect('mongodb://localhost/spotechnologiesdb')
 
 // Configuration
 
@@ -17,7 +21,7 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.cookieParser());
-  app.use(express.session({ secret: 'your secret here' }));
+  app.use(express.session({ secret: 'joobs' }));
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
 });
@@ -31,12 +35,7 @@ app.configure('production', function(){
 });
 
 // Routes
-
-app.get('/', routes.index);
-app.get('/sportsStandings', routes.sportsStandings);
-app.get('/about', routes.about);
-app.get('/contact', routes.contact);
-app.get('/bootstrapIndex', routes.bootstrapIndex);
+require('./routes')(app);
 
 app.listen(8080, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

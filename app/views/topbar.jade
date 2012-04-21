@@ -2,7 +2,6 @@ div.topbar
   div.fill
     div.container
       a.brand(href='/') #{title}
-      - var items = [{ value: 'Home', path: '' },{ value: 'Sports Standings', path: 'sportsStandings' },{ value: 'About', path: 'about' },{ value: 'Contact', path: 'contact' }]; 
       ul.nav
         li
           a(href='/') Home
@@ -10,11 +9,11 @@ div.topbar
           a(href='/sportsStandings') Standings
         li
           a(href='/about') About
-        li
-          a(href='/bootstrapIndex') Bootstrap
-
+        
       form.pull-right(method="post", id="loginForm")
         input.input-small(id="username", type="text", name="User", placeholder="Username")
         input.input-small(id="password", type="password", name="Password", placeholder="Password")
         input.btn.primary(type="submit", value="Sign In")
       #loginPrompt.pull-right.login-prompt
+
+      

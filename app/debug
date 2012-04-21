@@ -1,0 +1,3 @@
+node --debug-brk app.js &
+node-inspector --web-port=8989 &
+
