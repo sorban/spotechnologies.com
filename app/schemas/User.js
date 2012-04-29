@@ -19,7 +19,7 @@ var User = new Schema({
               set : toLower,
               index : { unique : true }
               },
-  'password' : String,
+  'password' : String
 });
 
 User.statics.findUser = function(username, password, cb){
@@ -43,6 +43,5 @@ User.statics.validateUser = function(username, password, cb){
     }
   });
 };
-
 
 module.exports = mongoose.model('User' , User);
