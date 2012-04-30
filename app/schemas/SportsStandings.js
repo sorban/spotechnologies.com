@@ -37,6 +37,8 @@ var SportsStandings = new Schema({
             }
 });
 
+SportsStandings.index( { sport: 1, league: 1, division: 1, teamName: 1 }, { unique: true });
+
 SportsStandings.statics.findTeamRecord = function(sport, league, 
                                                   division, teamName,
                                               cb) {
