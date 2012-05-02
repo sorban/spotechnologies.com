@@ -6,8 +6,9 @@ div.container
       h1 Sports Standings
         p This application is intended to show the latest standings for a few North American sports. Ultimately I'd like to add the ability to see how it's changed over time.
     
+  
   .row
-    .span2
+    .span3
       p Team
     .span1 
       p W-L
@@ -16,9 +17,9 @@ div.container
     .span1
       p GB
   
-  - each team in teams
+  - each team in standings
     .row
-      .span2
+      .span3
         p #{team.teamName}
       .span1 
         p #{team.record}
