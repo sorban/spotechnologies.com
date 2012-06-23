@@ -13,10 +13,12 @@ var facebook_client = new FacebookClient(
     }
 );
 
-function teamDisplay(name, wins, losses) {
+function teamDisplay(league, division, name, wins, losses) {
+	this.league = league;
+	this.division = division;
 	this.teamName = name;
 	this.record = String(wins + '-' + losses);
-	this.pct = String('.' + (wins / (wins + losses)).toFixed(3) * 1000);
+	this.pct = String((wins / (wins + losses)).toFixed(3)).slice(1);
 }
 
 module.exports = function(app) {
@@ -27,18 +29,20 @@ module.exports = function(app) {
 
 	app.get('/sportsStandings', function(req, res) {
 		console.log('in sportsStandings');
-		SportsStandings.findBySport('mlb', function(err, sportsStandings) {
-			console.log('err: ' + err + 'sportsStandings: ' + sportsStandings);
+		SportsStandings.findBySport('mlb', function(err, response) {
+			//console.log('err: ' + err + 'response: ' + response);
 			if(!err) {
-				console.log('object: ' + sportsStandings + ' name: ' + sportsStandings.teamName);
-				var numTeams = sportsStandings.length;
-				var teams = new Array(numTeams);
+				//console.log('object: ' + response + ' name: ' + response.teamName);
+				var numTeams = response.length;
+				var standings = new Array(numTeams);
 				for(var i = 0; i < numTeams; i++) {
-					teams[i] = new teamDisplay(sportsStandings[i].teamName, sportsStandings[i].wins, sportsStandings[i].losses);
-					console.log('one item: ' + teams[i]);
+					standings[i] = new teamDisplay(response[i].league, response[i].division, 
+											   response[i].teamName, response[i].wins, 
+											   response[i].losses);
+					//console.log('one item: ' + standings[i]);
 				}
 				console.log(teams);
-	  			res.render('sportsStandings', { teams: teams });
+  			res.render('sportsStandings', { teams: teams });
 	  		}
 		});
 	});
