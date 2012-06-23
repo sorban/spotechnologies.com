@@ -1,0 +1,37 @@
+div#fb-root
+script(type="text/javascript", src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php")
+
+include topbar
+
+div.container
+  div.page-header
+    h1 Social 
+      p Sandbox for testing different social integrations
+
+  table
+    tr
+      th Platform
+      th Interaction
+    tbody
+      tr
+        td Facbook Send
+        td 
+          form(method="post", id="facebookSendForm")
+            input(id="url", type="text", name="url", placeholder="Enter URL to share")
+            input.btn.primary(type="submit", value="Share")
+      tr
+        td Facbook Post
+        td Lorem Ipsum
+      tr
+        td LinkedIn
+        td Lorem Ipsum
+      tr
+        td Twitter
+        td Lorem Ipsum
+      tr
+        td Google
+        td Lorem Ipsum
+
+
+      
+include footer

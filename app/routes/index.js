@@ -3,8 +3,15 @@
 var util = require('util');
 var User  = require('../schemas/User');
 var SportsStandings = require('../schemas/SportsStandings');
+var FacebookClient = require("facebook-client").FacebookClient;
 
-var titleProp = { title: 'SPO Technologies' };
+var facebook_client = new FacebookClient(
+    "353022608104506", // configure like your fb app page states
+    "ac33a5fedb2ab3cc051e0bcceaf2f982", // configure like your fb app page states
+    {
+        "timeout": 10000 // modify the global timeout for facebook calls (Default: 10000)
+    }
+);
 
 function teamDisplay(name, wins, losses) {
 	this.teamName = name;
@@ -15,7 +22,7 @@ function teamDisplay(name, wins, losses) {
 module.exports = function(app) {
 
 	app.get('/', function(req, res) {
-	  res.render('index', titleProp )
+	  res.render('index' )
 	});
 
 	app.get('/sportsStandings', function(req, res) {
@@ -31,14 +38,14 @@ module.exports = function(app) {
 					console.log('one item: ' + teams[i]);
 				}
 				console.log(teams);
-	  			res.render('sportsStandings', { title: 'SPO Technologies', teams: teams });
+	  			res.render('sportsStandings', { teams: teams });
 	  		}
 		});
 	});
 
 	app.get('/authFailed', function(req, res){
 	  util.log('redirectING')
-	  res.render('authFailed', titleProp)
+	  res.render('authFailed')
 	});
 
 	/**
@@ -62,44 +69,63 @@ module.exports = function(app) {
 	  });
 	});
 
+	app.post('/social', function(req, res) {
+ 		util.log('Serving request for url [POST] ' + req.route.path);
+
+ 		//insert facebook send button here
+ 		facebook_client.getSessionByRequestHeaders(req.headers)(function(facebook_session) {
+    	facebook_session.graphCall("/me", {
+    	})(function(result) {
+        console.log('Username is:' + result.name);
+    	});
+    	facebook_session.graphCall("/me/feed", {message:"I love node.js!"}, 'POST')(function(result) {
+        console.log('The new feed post id is: ' + result.id);
+    	});
+    	res.json({ message : 'received'});
+		});
+	});
+
+	app.get('/social', function(req, res){
+	  res.render('social')
+	});
 
 	app.get('/about', function(req, res){
-	  res.render('about', titleProp)
+	  res.render('about')
 	});
 
 	app.get('/contact', function(req, res){
-	  res.render('contact', titleProp)
+	  res.render('contact')
 	});
 
 	app.get('/bootstrapIndex', function(req, res){
-	  res.render('bootstrapIndex', titleProp)
+	  res.render('bootstrapIndex')
 	});
 
 	app.get('/base-css', function(req, res){
-	  res.render('base-css', titleProp)
+	  res.render('base-css')
 	});
 
 	app.get('/scaffolding', function(req, res){
-	  res.render('scaffolding', titleProp)
+	  res.render('scaffolding')
 	});
 
 	app.get('/components', function(req, res){
-	  res.render('components', titleProp)
+	  res.render('components')
 	});
 
 	app.get('/javascript', function(req, res){
-	  res.render('javascript', titleProp)
+	  res.render('javascript')
 	});
 
 	app.get('/less', function(req, res){
-	  res.render('less', titleProp)
+	  res.render('less')
 	});
 
 	app.get('/download', function(req, res){
-	  res.render('download', titleProp)
+	  res.render('download')
 	});
 
 	app.get('/examples', function(req, res){
-	  res.render('examples', titleProp)
+	  res.render('examples')
 	});
 };

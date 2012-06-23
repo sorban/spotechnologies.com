@@ -8,12 +8,14 @@ div.topbar
         li
           a(href='/sportsStandings') Standings
         li
+          a(href='/social') Social
+        li
           a(href='/about') About
         
       form.pull-right(method="post", id="loginForm")
         input.input-small(id="username", type="text", name="User", placeholder="Username")
         input.input-small(id="password", type="password", name="Password", placeholder="Password")
         input.btn.primary(type="submit", value="Sign In")
-      #loginPrompt.pull-right.login-prompt
+        loginPrompt.pull-right.login-prompt
 
       

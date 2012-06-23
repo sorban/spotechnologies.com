@@ -6,6 +6,7 @@
       "express": "latest"
     , "jade": "latest"
     , "mongoose": "latest"
-    , "bcrypt": "latest"
+    , "bcrypt": ">=0.4.1"
+    , "facebook-client": "latest"
   }
 }
